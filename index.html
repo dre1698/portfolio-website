@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portfolio of AndreCreate – UI/UX Designer & Frontend Developer. Clean designs, responsive websites, and bold visual identity." />
+    <meta name="keywords" content="AndreCreate, graphic design, frontend developer, portfolio, web design, HTML, CSS, JavaScript, Affinity Designer" />
+    <meta name="author" content="AndreCreate" />
+
+    <!-- Open Graph Meta Tags (for social sharing) -->
+    <meta property="og:title" content="AndreCreate Portfolio" />
+    <meta property="og:description" content="Clean design meets clean code. View the portfolio of AndreCreate – UI/UX Designer & Frontend Developer." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.andrecreate.com" />
+    <meta property="og:image" content="https://www.andrecreate.com/preview.jpg" />
+
+    <!-- Fonts & Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+
+  <body>
+    <a href="#main" class="skip-link" tabindex="0">Skip to content</a>
+    <!-- Site Header with Logo and Subtitle -->
+    <header>
+      <h1>
+        <span class="brand-name">andre</span><span class="brand-highlight">create</span>
+      </h1>
+      <p>UI/UX Designer & Frontend Developer</p>
+    </header>
+
+    <!-- Sticky Navigation Bar -->
+    <nav>
+      <div class="nav-logo"><span class="brand-name">a</span><span class="brand-highlight">c</span></div>
+      <div class="theme-toggle" title="Toggle dark mode">
+        <i data-lucide="sun" class="icon sun"></i>
+        <i data-lucide="moon" class="icon moon"></i>
+      </div>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div id="main" class="page-content"></div>
+
+      <!-- About Section -->
+      <section id="about" class="fade-in-section">
+        <h2>About Me</h2>
+        <div class="about-content">
+          <img src="profile.jpg" alt="Photo of me" class="about-photo" />
+          <p>
+            I'm a passionate graphic designer and frontend developer. Whether it’s building clean user interfaces or designing bold visual identities, I love blending code and creativity to bring ideas to life.
+          </p>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="fade-in-section">
+        <h2>Services</h2>
+        <div class="services-list">
+          <div class="service-box">
+            <h3>Logo & Visual Identity</h3>
+            <p>Custom logos, color palettes, and visual branding tailored to your project or brand.</p>
+          </div>
+          <div class="service-box">
+            <h3>UI & Web Design</h3>
+            <p>Designing clean, modern interfaces for websites, portfolios, and mobile-first layouts.</p>
+          </div>
+          <div class="service-box">
+            <h3>Frontend Development</h3>
+            <p>Responsive websites built with HTML, CSS, and JavaScript — fully coded by hand.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="fade-in-section">
+        <h2>Skills</h2>
+        
+        <div class="tabs">
+          <div class="tab-buttons">
+            <button class="tab-btn active" data-tab="languages">Languages</button>
+            <button class="tab-btn" data-tab="tools">Tools</button>
+            <button class="tab-btn" data-tab="techniques">Techniques</button>
+          </div>
+      
+          <div class="tab-content active" id="languages">
+            <div class="skills-grid">
+              <span class="skill-tag">HTML</span>
+              <span class="skill-tag">CSS</span>
+              <span class="skill-tag">JavaScript</span>
+            </div>
+          </div>
+      
+          <div class="tab-content" id="tools">
+            <div class="skills-grid">
+              <span class="skill-tag">Affinity Designer</span>
+              <span class="skill-tag">VS Code</span>
+              <span class="skill-tag">Git & GitHub</span>
+            </div>
+          </div>
+      
+          <div class="tab-content" id="techniques">
+            <div class="skills-grid">
+              <span class="skill-tag">Responsive Design</span>
+              <span class="skill-tag">Accessibility</span>
+              <span class="skill-tag">Performance</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+<section id="projects" class="fade-in-section">
+  <h2>My Work</h2>
+
+  
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <img src="projects/project1.jpg" alt="Project 1 screenshot" />
+      <div class="project-info">
+        <h3>Project Title</h3>
+        <p>Short description of the project. Mention tools used or purpose.</p>
+
+        <div class="project-tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">Affinity Designer</span>
+        </div>
+
+        <a href="#" target="_blank">View Project</a>
+      </div>
+    </div>
+
+    <div class="project-card coming-soon">
+      <div class="project-info">
+        <h3>New Project</h3>
+        <p>Something cool is on the way. Stay tuned!</p>
+
+        <div class="project-tags">
+          <span class="tag">Coming Soon</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add more project-cards as needed -->
+
+  </div> <!-- End .projects-grid -->
+</section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="fade-in-section">
+        <h2>Contact</h2>
+        <p>Feel free to reach out via email or social media:</p>
+
+        <div class="social-links">
+          <a href="mailto:info@andrecreate.com" aria-label="Email" title="Email">
+            <img src="icons/email.svg" alt="Email icon" />
+          </a>
+          <a href="https://github.com/yourusername" aria-label="GitHub" title="GitHub" target="_blank">
+            <img src="icons/github.svg" alt="GitHub icon" />
+          </a>
+          <a href="https://linkedin.com/in/yourprofile" aria-label="LinkedIn" title="LinkedIn" target="_blank">
+            <img src="icons/linkedin.svg" alt="LinkedIn icon" />
+          </a>
+          <a href="https://instagram.com/yourusername" aria-label="Instagram" title="Instagram" target="_blank">
+            <img src="icons/instagram.svg" alt="Instagram icon" />
+          </a>
+        </div>
+      </section>
+    </div>
+  </div>
+
+    <!-- Site Footer -->
+    <footer>
+      <p>© 2025 andrecreate. All rights reserved.</p>
+    </footer>
+    
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTopBtn" title="Scroll to top">↑</button>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+  </body>
+</html>
