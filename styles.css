@@ -21,7 +21,7 @@
     margin: 0;
     padding: 0;
     background-color: var(--background);
-    color: var(--text);
+    color: var(--primary);
     font-family: 'Poppins', sans-serif;
   }
   
@@ -271,6 +271,7 @@
     }
   }
 
+
     /* ---------------------------------- */
   /* ABOUT IMAGE                       */
   /* ---------------------------------- */
@@ -291,48 +292,83 @@
     box-shadow: 0 4px 10px var(--shadow);
   }
   
-  /* ---------------------------------- */
-  /* SERVICES GRID                     */
-  /* ---------------------------------- */
+/* ---------------------------------- */
+/* OFFER TIMELINE (clean + aligned)  */
+/* ---------------------------------- */
+
+.offer-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-left: 0; /* no offset anymore */
+}
+
+/* draw vertical line as independent element */
+.offer-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 36px; /* aligns with center of icon */
+  width: 3px;
+  height: 100%;
+  background-color: var(--primary);
+}
+
+.offer-item {
+  position: relative;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.offer-icon {
+  position: absolute;
+  left: 16px;
+  top: 4px;
+  background-color: var(--accent);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px var(--shadow);
+  z-index: 2;
+}
+
+.offer-icon i {
+  width: 11px;
+  height: 11px;
+}
+
+.offer-content {
+  padding-left: 72px; /* enough space for icon + spacing */
+}
+
+.offer-content h3 {
+  margin: 0 0 10px;
+  font-size: 1.2em;
+  color: var(--nav-bg);
+}
+
+.offer-content p {
+  margin: 0;
+  color: var(--soft-text);
+  font-size: 1em;
+  line-height: 1.5;
+}
   
-  .services-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-  }
+ 
   
-  .service-box {
-    background-color: var(--white);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px var(--shadow);
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  .service-box h3 {
-    margin-top: 0;
-    color: var(--primary);
-    font-size: 1.2em;
-  }
-  
-  .service-box p {
-    margin-bottom: 0;
-    color: var(--soft-text);
-    font-size: 1em;
-    line-height: 1.5;
-  }
-  
-  .service-box:hover {
-    transform: translateY(-5px);
-  }
-  
+
   
   /* ---------------------------------- */
   /* SKILLS TAGS                       */
   /* ---------------------------------- */
   
-  .skills-grid {
+ /* .skills-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
@@ -360,13 +396,13 @@
   
   .skill-tag:hover {
     transform: scale(1.08);
-  }
+  }*/
   
   /* ----------------------- */
 /*  TABBED SKILLS SECTION  */
 /* ----------------------- */
 
-.tabs {
+/*.tabs {
     margin-top: 30px;
   }
   
@@ -379,7 +415,7 @@
   }
   
   .tab-btn {
-    background-color: var(--primary); /* Navy */
+    background-color: var(--primary); 
     color: var(--white);
     border: none;
     padding: 8px 16px;
@@ -395,7 +431,7 @@
   }
   
   .tab-btn.active {
-    background-color: var(--accent); /* Tomato red */
+    background-color: var(--accent); 
     color: var(--white);
   }
   
@@ -418,21 +454,21 @@
       opacity: 1;
       transform: translateY(0);
     }
-  }
+  }*/
 
 /* ----------------------- */
 /*  PROJECTS SECTION       */
 /* ----------------------- */
 
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 24px;
-    margin-top: 30px;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 30px;
+}
   
   .project-card {
-    background-color: #1e1e2f;
+    background-color: var(--primary);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 12px var(--shadow);
@@ -490,7 +526,7 @@
   }
   
   .project-tags .tag {
-    background-color: var(--primary);
+    background-color: var(--nav-bg);
     color: var(--white);
     font-size: 0.75em;
     padding: 5px 10px;
@@ -509,6 +545,97 @@
   
   .project-card.coming-soon .project-tags {
     justify-content: center;
+  }
+
+  /*.project-card img.tall-preview {
+    object-fit: contain;
+    width: 100%;
+    max-height: 320px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    background-color: #fff;
+  }*/
+
+  .filter-buttons {
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: -10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+  
+  .filter-buttons button {
+    padding: 8px 16px;
+    border: none;
+    background: var(--nav-bg);
+    color: var(--white);
+    font-weight: 600;
+    border-radius: 20px;
+    box-shadow: 0 2px 6px var(--shadow);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .filter-buttons button:hover {
+    background-color: var(--accent);
+    color: white;
+    transform: scale(1.05);
+  }
+  
+  .filter-buttons button.active {
+    background-color: var(--accent);
+    color: white;
+  }
+
+
+  .project-detail {
+    max-width: 1000px;
+    margin: 100px auto;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .project-description {
+    font-size: 1.1em;
+    color: var(--soft-text);
+    margin-bottom: 40px;
+  }
+  
+  .project-media {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+  }
+  
+  .project-media img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px var(--shadow);
+    object-fit: contain;
+    margin-bottom: 20px;
+  }
+  
+  /* Styled back-button */
+  .back-button {
+    display: inline-block;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .back-button:hover {
+    background-color: var(--accent);
+    transform: scale(1.05);
   }
    /* ---------------------------------- */
   /* CONTACT SECTION                   */
@@ -627,7 +754,128 @@
     opacity: 0;
   }
 
+/* ---------------------------------- */
+/* TOOLBOX – HORIZONTAL SCROLL STYLE */
+/* ---------------------------------- */
 
+.tool-scroll {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 16px;
+  padding: 20px 0 60px 0;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overscroll-behavior-x: contain;
+}
+
+.tool-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-start-spacer,
+.scroll-end-spacer {
+  flex: 0 0 24px;
+  pointer-events: none;
+}
+
+.tool-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  position: relative;
+  min-width: 140px;
+  scroll-snap-align: start;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 14px 20px;
+  border-radius: 16px;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 4px 8px var(--shadow);
+  flex-shrink: 0;
+}
+
+.tool-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tool-item span {
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: inline-block; /* wichtig für transform */
+}
+
+.tool-item:hover span {
+  transform: scale(1.05); /* leicht größer beim Hover */
+  color: var(--accent);   /* wie vorher: tomato red */
+}
+
+.tool-item svg,
+.tool-item img {
+  display: block;
+  margin: 0 auto 10px;
+  height: 28px;
+  width: auto;
+  transition: transform 0.3s ease, stroke 0.3s ease, filter 0.3s ease;
+  stroke: var(--white);
+}
+
+.tool-item:hover svg {
+  transform: scale(1.15);
+  stroke: var(--accent);
+}
+
+.tool-item:hover img {
+  transform: scale(1.15);
+}
+
+
+.tool-item {
+  position: relative;
+  /* restliche Styles wie bisher */
+}
+
+.tool-item::after {
+  content: attr(data-tooltip);
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 10px);
+  background: var(--accent);
+  color: white;
+  font-size: 0.75em;
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+}
+
+/* Tooltip-Pfeil (optional) */
+.tool-item::before {
+  content: '';
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--hover-accent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+/* Show on hover */
+.tool-item:hover::after,
+.tool-item:hover::before {
+  opacity: 1;
+  transform: translate(-50%,40%);
+}
   /* ---------------------------------- */
   /* FADE-IN SECTION ANIMATION         */
   /* ---------------------------------- */
@@ -647,57 +895,102 @@
 /* ---------------------------------- */
 /* DARK MODE STYLES                   */
 /* ---------------------------------- */
-body, nav, header, footer, section, .service-box, .skill-tag {
-    transition: background-color 0.4s ease, color 0.2s ease, border-color 0.3s ease;
-  }
+body, nav, header, footer, section, .skill-tag {
+  transition: background-color 0.4s ease, color 0.2s ease, border-color 0.3s ease;
+}
 
 body.dark-mode {
-    background-color: #1c1c1c;     /* Premium dark grey background */
-    color: #ffffff;                /* Global white text */
-  }
-  
-  /* Section content blocks */
-  body.dark-mode section {
-    background-color: #2a2a2a;
-    color: #ffffff;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  }
+  background-color: #1c1c1c;     /* Premium dark grey background */
+  color: #ffffff;                /* Global white text */
+}
 
-  /* Fix About Me section text */
+/* Section content blocks */
+body.dark-mode section {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Fix About Me section text */
 body.dark-mode #about p {
-    color: #ffffff;
-  }
+  color: #ffffff;
+}
 
-  /* Service boxes inside "Services" section */
-  body.dark-mode .service-box {
-    background-color: #2f2f2f;
-    color: #ffffff; /* 🧩 Force white text inside the box */
-  }
-  
-  /* Fix for any <p> inside service boxes */
-  body.dark-mode .service-box p,
-  body.dark-mode .service-box h3 {
-    color: #ffffff;
-  }
-  
-  /* Fix for "My Work" section paragraphs */
-  body.dark-mode #projects p {
-    color: #ffffff;
-  }
-  
-  /* Skill tags — navy blue with white text */
-  body.dark-mode .skill-tag {
-    background-color: var(--primary);
-    color: #ffffff;
-  }
-  
-  /* Social media icon circles */
-  body.dark-mode .social-links a {
-    background-color: var(--accent);
-  }
-  
-  body.dark-mode .social-links a:hover {
-    background-color: var(--hover-accent);
-  }
-  
+/* What I Offer section */
+body.dark-mode .offer {
+  background-color: #2a2a2a;
+  color: white;
+}
+
+body.dark-mode .offer-content h3 {
+  color: var(--nav-bg);
+}
+
+body.dark-mode .offer-content p {
+  color: #dddddd;
+}
+
+body.dark-mode .offer-icon {
+  background-color: var(--accent);
+  color: white;
+}
+
+/* Fix for "My Work" section paragraphs */
+body.dark-mode #projects p {
+  color: #ffffff;
+}
+
+/* Skill tags — navy blue with white text */
+body.dark-mode .skill-tag {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+/* Social media icon circles */
+body.dark-mode .social-links a {
+  background-color: var(--accent);
+}
+
+body.dark-mode .social-links a:hover {
+  background-color: var(--hover-accent);
+}
+
+/* Dark mode photo gallery */
+body.dark-mode .photo-gallery {
+  background-color: #1c1c1c;
+  color: #ffffff;
+}
+
+body.dark-mode .gallery-intro {
+  color: #dddddd;
+}
+
+body.dark-mode .photo-series-detail img {
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.1);
+}
+
+/* Back button */
+body.dark-mode .back-button {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+body.dark-mode .back-button:hover {
+  background-color: var(--hover-accent);
+}
+
+/* Detail page styling */
+body.dark-mode .project-detail {
+  background-color: #2a2a2a;
+  color: #ffffff;
+}
+
+body.dark-mode .project-description {
+  color: #dddddd;
+}
+
+body.dark-mode .project-media img,
+body.dark-mode .project-media video {
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.1);
+}

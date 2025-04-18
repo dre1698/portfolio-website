@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Artwork – Processing</title>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Interactive Artwork – Processing" />
+    <meta property="og:description" content="An interactive generative artwork created in Processing. Visual movement, interactivity and code collide." />
+    <meta property="og:url" content="https://www.andrecreate.com/processing-artwork.html" />
+    <meta property="og:image" content="https://www.andrecreate.com/projects/processing-art.jpg" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+  <!-- Dark Mode detection based on localStorage -->
+  <script>
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark-mode");
+    }
+  </script>
+  
+    <header>
+      <h1><span class="brand-name">andre</span><span class="brand-highlight">create</span></h1>
+      <p>UX/UI Designer & Frontend Developer</p>
+    </header>
+
+    <main>
+      <section class="project-detail">
+        <h2>Interactive Generative Artwork</h2>
+    
+        <p class="project-description">
+          <strong>Inspired by:</strong> Robert Delaunay’s <em>Rhythm Reliefs</em> (1932)<br>
+          <strong>Tools:</strong> Processing (Java)
+        </p>
+    
+        <p class="project-description">
+          This generative and interactive artwork was inspired by the rhythm and abstraction of early modernist compositions. It translates geometric repetition and dynamic visual rhythm into playful, code-based interaction.
+        </p>
+    
+        <p class="project-description">
+          <strong>Interaction Zones:</strong>
+          <ul>
+            <li><strong>Blue circle:</strong> Spawns colorful bouncing balls</li>
+            <li><strong>Beige circle:</strong> Disables bouncing – balls float away</li>
+            <li><strong>Upper right rings:</strong> Switches to black-and-white mode</li>
+            <li><strong>Lower white circle:</strong> Triggers a hypnotic spiral animation</li>
+          </ul>
+        </p>
+    
+        <p class="project-description">
+          <strong>Focus:</strong><br>
+          This project was an exploration of real-time interaction, generative visuals, and playful motion through creative coding. The goal was to create an artwork that feels alive and responds intuitively to user input.
+        </p>
+    
+        <div class="project-media">
+          <img src="projects/processing-art.gif" alt="Animated preview of interactive artwork" />
+        </div>
+    
+        <div style="text-align:center; margin-top: 50px;">
+          <a href="index.html" class="back-button">← Back to Overview</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 andrecreate. All rights reserved.</p>
+    </footer>
+    
+    <script src="script.js"></script>
+  </body>
+</html>

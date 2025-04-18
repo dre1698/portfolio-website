@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>andrecreate – UX/UI Designer & Frontend Developer</title>
 
+    <!-- Favicon -->
+    <link rel="icon" href="/images/favicon.png" type="image/png" />
+
     <!-- SEO Meta Tags -->
     <meta name="description" content="Portfolio of AndreCreate – UI/UX Designer & Frontend Developer. Clean designs, responsive websites, and bold visual identity." />
     <meta name="keywords" content="AndreCreate, graphic design, frontend developer, portfolio, web design, HTML, CSS, JavaScript, Affinity Designer" />
     <meta name="author" content="AndreCreate" />
 
-    <!-- Open Graph Meta Tags (for social sharing) -->
+    <!-- Open Graph (Social Sharing) -->
     <meta property="og:title" content="andrecreate Portfolio" />
     <meta property="og:description" content="Clean design meets clean code. View the portfolio of andrecreate – UX/UI Designer & Frontend Developer." />
     <meta property="og:type" content="website" />
@@ -26,7 +29,8 @@
 
   <body>
     <a href="#main" class="skip-link" tabindex="0">Skip to content</a>
-    <!-- Site Header with Logo and Subtitle -->
+
+    <!-- Header -->
     <header>
       <h1>
         <span class="brand-name">andre</span><span class="brand-highlight">create</span>
@@ -34,25 +38,30 @@
       <p>UX/UI Designer & Frontend Developer</p>
     </header>
 
-    <!-- Sticky Navigation Bar -->
+    <!-- Navigation -->
     <nav>
-      <div class="nav-logo"><span class="brand-name">a</span><span class="brand-highlight">c</span></div>
+      <div class="nav-logo">
+        <span class="brand-name">a</span><span class="brand-highlight">c</span>
+      </div>
+
       <div class="theme-toggle" title="Toggle dark mode">
         <i data-lucide="sun" class="icon sun"></i>
         <i data-lucide="moon" class="icon moon"></i>
       </div>
+
       <ul>
         <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#skills">Skills</a></li>
+        <li><a href="#toolbox">My Toolbox</a></li>
+        <li><a href="#offer">What I Offer</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
 
-    <div id="main" class="page-content"></div>
+    <!-- Main Content -->
+    <main id="main" class="page-content">
 
-      <!-- About Section -->
+      <!-- About -->
       <section id="about" class="fade-in-section">
         <h2>About Me</h2>
         <div class="about-content">
@@ -63,105 +72,293 @@
         </div>
       </section>
 
-      <!-- Services Section -->
-      <section id="services" class="fade-in-section">
-        <h2>Services</h2>
-        <div class="services-list">
-          <div class="service-box">
-            <h3>Logo & Visual Identity</h3>
-            <p>Custom logos, color palettes, and visual branding tailored to your project or brand.</p>
+      <section id="toolbox" class="fade-in-section">
+        <h2>My Toolbox</h2>
+        <div class="tool-scroll">
+
+          
+      
+          <!-- Development (Lucide Icons) -->
+          <div class="tool-item" data-tooltip="Used for structure and markup">
+            <i data-lucide="code"></i>
+            <span>HTML</span>
           </div>
-          <div class="service-box">
-            <h3>UI & Web Design</h3>
-            <p>Designing clean, modern interfaces for websites, portfolios, and mobile-first layouts.</p>
+      
+          <div class="tool-item" data-tooltip="Used for layout and styling">
+            <i data-lucide="layers"></i>
+            <span>CSS</span>
           </div>
-          <div class="service-box">
-            <h3>Frontend Development</h3>
-            <p>Responsive websites built with HTML, CSS, and JavaScript — fully coded by hand.</p>
+      
+          <div class="tool-item" data-tooltip="Interactive behaviour and logic">
+            <i data-lucide="code-2"></i>
+            <span>JavaScript</span>
           </div>
+      
+          <div class="tool-item" data-tooltip="My daily coding environment">
+            <img src="icons/vscode.svg" alt="VS Code logo" data-hover="icons/vscode-color.svg" />
+            <span>VS Code</span>
+          </div>
+      
+          <div class="tool-item" data-tooltip="Version control & collaboration">
+            <i data-lucide="github"></i>
+            <span>GitHub</span>
+          </div>
+      
+          <!-- Design (SVG Logos) -->
+          <div class="tool-item" data-tooltip="Interface design & layout systems">
+            <img src="icons/figma.svg" alt="Figma logo" data-hover="icons/figma-color.svg" />
+            <span>Figma</span>
+          </div>
+      
+          <div class="tool-item" data-tooltip="Branding, layout & illustration">
+            <img src="icons/affinity-designer.svg" alt="Affinity Designer logo" data-hover="icons/affinity-designer-color.svg" />
+            <span>Affinity Designer</span>
+          </div>
+      
+          <div class="tool-item" data-tooltip="Image editing & retouching">
+            <img src="icons/affinity-photo.svg" alt="Affinity Photo logo" data-hover="icons/affinity-photo-color.svg" />
+            <span>Affinity Photo</span>
+          </div>
+      
+          <div class="tool-item" data-tooltip="Editorial layouts & print exports">
+            <img src="icons/affinity-publisher.svg" alt="Affinity Publisher logo" data-hover="icons/affinity-publisher-color.svg" />
+            <span>Affinity Publisher</span>
+          </div>
+      
+          <!-- 3D & Motion (SVG Logos) -->
+          <div class="tool-item" data-tooltip="3D modeling and scenes">
+            <img src="icons/blender.svg" alt="Blender logo" data-hover="icons/blender-color.svg" />
+            <span>Blender</span>
+          </div>
+      
+          <div class="tool-item" data-tooltip="Motion graphics and animation">
+            <img src="icons/after-effects.svg" alt="After Effects logo" data-hover="icons/after-effects-color.svg" />
+            <span>After Effects</span>
+          </div>
+      
+          <div class="tool-item" data-tooltip="Quick cuts & personal video edits">
+            <img src="icons/imovie.svg" alt="iMovie logo" data-hover="icons/imovie-color.svg" />
+            <span>iMovie</span>
+          </div>
+      
+          <div class="tool-item" data-tooltip="Game engine for interactive projects">
+            <img src="icons/unity.svg" alt="Unity logo" data-hover="icons/unity-color.svg" />
+            <span>Unity</span>
+          </div>
+      
+          <div class="tool-item" data-tooltip="Creative coding & generative visuals">
+            <img src="icons/processing.png" alt="Processing logo" data-hover="icons/processing-color.png" />
+            <span>Processing</span>
+          </div>
+          
         </div>
       </section>
 
-      <!-- Skills Section -->
-      <section id="skills" class="fade-in-section">
-        <h2>Skills</h2>
-        
-        <div class="tabs">
-          <div class="tab-buttons">
-            <button class="tab-btn active" data-tab="languages">Languages</button>
-            <button class="tab-btn" data-tab="tools">Tools</button>
-            <button class="tab-btn" data-tab="techniques">Techniques</button>
-          </div>
+      <section id="offer" class="fade-in-section">
+        <h2>What I Offer</h2>
+        <div class="offer-timeline">
       
-          <div class="tab-content active" id="languages">
-            <div class="skills-grid">
-              <span class="skill-tag">HTML</span>
-              <span class="skill-tag">CSS</span>
-              <span class="skill-tag">JavaScript</span>
+          <div class="offer-item">
+            <div class="offer-icon">
+              <i data-lucide="palette"></i>
+            </div>
+            <div class="offer-content">
+              <h3>Visual Identity Design</h3>
+              <p>Creating logos, colors, and visual language that reflect your brand’s personality.</p>
             </div>
           </div>
       
-          <div class="tab-content" id="tools">
-            <div class="skills-grid">
-              <span class="skill-tag">Affinity Designer</span>
-              <span class="skill-tag">VS Code</span>
-              <span class="skill-tag">Git & GitHub</span>
+          <div class="offer-item">
+            <div class="offer-icon">
+              <i data-lucide="layout-dashboard"></i>
+            </div>
+            <div class="offer-content">
+              <h3>UI & UX Design</h3>
+              <p>Designing user-friendly web and app interfaces with a focus on structure and flow.</p>
             </div>
           </div>
       
-          <div class="tab-content" id="techniques">
-            <div class="skills-grid">
-              <span class="skill-tag">Responsive Design</span>
-              <span class="skill-tag">Accessibility</span>
-              <span class="skill-tag">Performance</span>
+          <div class="offer-item">
+            <div class="offer-icon">
+              <i data-lucide="code"></i>
+            </div>
+            <div class="offer-content">
+              <h3>Creative Development</h3>
+              <p>Coding modern, responsive websites with HTML, CSS, and JavaScript – by hand.</p>
             </div>
           </div>
+      
         </div>
       </section>
 
-      <!-- Projects Section -->
-<section id="projects" class="fade-in-section">
-  <h2>My Work</h2>
+      <!-- Projects -->
+      <section id="projects" class="fade-in-section">
+        <h2>Projects</h2>
 
-  
-  <div class="projects-grid">
-
-    <div class="project-card">
-      <img src="projects/project1.jpg" alt="Project 1 screenshot" />
-      <div class="project-info">
-        <h3>Project Title</h3>
-        <p>Short description of the project. Mention tools used or purpose.</p>
-
-        <div class="project-tags">
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-          <span class="tag">Affinity Designer</span>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="code">Creative Coding</button>
+          <button class="filter-btn" data-filter="game">Game</button>
+          <button class="filter-btn" data-filter="motion">Motion Design</button>
+          <button class="filter-btn" data-filter="ux">UX/UI</button>
+          <button class="filter-btn" data-filter="visual">Visual Design</button>
+          <button class="filter-btn" data-filter="3d">3D</button>
+          <button class="filter-btn" data-filter="photo">Photography</button>
         </div>
 
-        <a href="#" target="_blank">View Project</a>
-      </div>
-    </div>
+        <div class="projects-grid">
 
-    <div class="project-card coming-soon">
-      <div class="project-info">
-        <h3>New Project</h3>
-        <p>Something cool is on the way. Stay tuned!</p>
+          <!-- Project Cards -->
+          <div class="project-card code">
+            <img src="projects/processing-art.jpg" alt="Interactive generative artwork made in Processing" />
+            <div class="project-info">
+              <h3>Interactive Generative Artwork</h3>
+              <p>An interactive generative artwork exploring movement, rhythm, and randomness through code – inspired by Robert Delaunay’s visual language.</p>
+              <div class="project-tags">
+                <span class="tag">Visual Experiment</span>
+                <span class="tag">Generative Art</span>
+                <span class="tag">Animation</span>
+                <span class="tag">Interactive Design</span>
 
-        <div class="project-tags">
-          <span class="tag">Coming Soon</span>
+              </div>
+
+              <p class="project-tools"><strong>Tools:</strong> Processing, Java</p>
+
+              <a href="processing-artwork.html">View Project</a>
+            </div>
+          </div>
+
+          <div class="project-card visual">
+            <img src="projects/final-exhibition-poster.jpg" alt="Poster design for final exhibition" />
+            <div class="project-info">
+              <h3>Exhibition – Poster Design</h3>
+              <p>A print poster created for a group exhibition, combining bold typography and vibrant geometry to communicate the theme of identity.</p>
+              <div class="project-tags">
+                <span class="tag">Poster Design</span>
+                <span class="tag">Layout</span>
+                <span class="tag">Typography</span>
+                <span class="tag">Print Design</span>
+              </div>
+
+              <p class="project-tools"><strong>Tools:</strong> Affinity Designer</p>
+
+              <a href="exhibition-poster.html">View Project</a>
+            </div>
+          </div>
+
+          <div class="project-card photo">
+            <img src="projects/photo-series-thumbnail.jpg" alt="Winter photography series" />
+            <div class="project-info">
+              <h3>Winter Perspectives – Photo Series</h3>
+              <p>A photo series exploring solitude, geometry, and winter mood in urban spaces – created as a personal visual study.</p>
+              <div class="project-tags">
+                <span class="tag">Photography</span>
+                <span class="tag">Visual Storytelling</span>
+                <span class="tag">Photo Editing</span>
+                <span class="tag">Personal Work</span>
+              </div>
+
+              <p class="project-tools"><strong>Tools:</strong> Adobe Lightroom, Affinity Photo</p>
+
+              <a href="winter-photo-series.html">View Project</a>
+            </div>
+          </div>
+
+          <div class="project-card code game motion">
+            <img src="projects/jump-and-run.jpg" alt="2D Jump and Run Game made in Processing" />
+            <div class="project-info">
+              <h3>Jump and Run Game</h3>
+              <p>A side-scrolling platformer with custom visuals, enemy interaction, and playful game physics.</p>
+              <div class="project-tags">
+                <span class="tag">2D Platformer</span>
+                <span class="tag">Game Mechanics</span>
+                <span class="tag">Sprite Animation</span>
+                <span class="tag">Level Design</span>
+              </div>
+
+              <p class="project-tools"><strong>Tools:</strong> Processing, Java</p>
+
+              <a href="jump-and-run.html">View Project</a>
+            </div>
+          </div>
+
+          <div class="project-card 3d">
+            <img src="projects/pirate-ship-3d.jpg" alt="3D model of pirate ship and island made in Maya" />
+            <div class="project-info">
+              <h3>Pirate Island</h3>
+              <p>A stylized 3D environment featuring a pirate ship and tropical island – exploring low-poly design, composition, and visual storytelling..</p>
+              <div class="project-tags">
+                <span class="tag">3D Modeling</span>
+                <span class="tag">Environment Deesign</span>
+                <span class="tag">Low Poly Style</span>
+              </div>
+
+              <p class="project-tools"><strong>Tools:</strong> Autodesk Maya</p>
+
+              <a href="pirate-ship.html">View Project</a>
+            </div>
+          </div>
+
+          <div class="project-card code game 3d">
+            <img src="projects/robot-cleaner-game.jpg" alt="Unity game about a cleaning robot with upgrade system" />
+            <div class="project-info">
+              <h3>Robot Dreams</h3>
+              <p>A 3D game about a vacuum robot on a mission – clean, upgrade, and survive through custom mechanics and interactive environments.</p>
+              <div class="project-tags">
+                <span class="tag">3D Game</span>
+                <span class="tag">Game Mechanics</span>
+                <span class="tag">Level Design</span>
+              </div>
+
+              <p class="project-tools"><strong>Tools:</strong> Unity, C#, Autodesk Maya</p>
+
+              <a href="robot.html">View Project</a>
+            </div>
+          </div>
+
+          <div class="project-card motion visual">
+            <img src="projects/tuning-video-thumbnail.jpg" alt="2D animation about car tuning history" />
+            <div class="project-info">
+              <h3>Car Tuning Through Time</h3>
+              <p>A fast-paced 2D animation showing the evolution of car tuning across decades – with stylized visuals, motion design, and storytelling.</p>
+          
+              <div class="project-tags">
+                <span class="tag">2D Animation</span>
+                <span class="tag">Motion Design</span>
+                <span class="tag">Visual Storytelling</span>
+              </div>
+          
+              <p class="project-tools"><strong>Tools:</strong> Affinity Designer, After Effects, iMovie</p>
+          
+              <a href="car-tuning.html">View Project</a>
+            </div>
+          </div>
+
+          <div class="project-card visual">
+            <img src="projects/fanclub-logo.jpg" alt="branding of a football fanclub" />
+            <div class="project-info">
+              <h3>Fanclub Branding</h3>
+              <p>A visual identity for a local football fanclub, including logo and scarf design – created to unite fans through strong, versatile design across digital and print formats.</p>             
+              <div class="project-tags">
+                <span class="tag">Branding</span>
+                <span class="tag">Logo Design</span>
+                <span class="tag">Merchandise Design</span>
+                <span class="tag">Visual Identity</span>
+              </div>
+
+              <p class="project-tools"><strong>Tools:</strong> Affinity Designer, Affinity Photo</p>
+
+              <a href="fanclub-branding.html">View Project</a>
+            </div>
+          </div>
+
         </div>
-      </div>
-    </div>
+      </section>
 
-    <!-- Add more project-cards as needed -->
-
-  </div> <!-- End .projects-grid -->
-</section>
-
-      <!-- Contact Section -->
+      <!-- Contact -->
       <section id="contact" class="fade-in-section">
         <h2>Contact</h2>
-        <p>Feel free to reach out via email or social media:</p>
+        <p>Let's create something</p>
 
         <div class="social-links">
           <a href="mailto:info@andrecreate.com" aria-label="Email" title="Email">
@@ -178,18 +375,18 @@
           </a>
         </div>
       </section>
-    </div>
-  </div>
 
-    <!-- Site Footer -->
+    </main>
+
+    <!-- Footer -->
     <footer>
       <p>© 2025 andrecreate. All rights reserved.</p>
     </footer>
-    
-  <!-- Scroll to Top Button -->
-  <button id="scrollToTopBtn" title="Scroll to top">↑</button>
 
-    <!-- JavaScript File -->
+    <!-- Scroll to Top -->
+    <button id="scrollToTopBtn" title="Scroll to top">↑</button>
+
+    <!-- Scripts -->
     <script src="script.js"></script>
   </body>
 </html>

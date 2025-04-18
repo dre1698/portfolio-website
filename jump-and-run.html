@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2D Jump-and-Run Game</title>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="2D Jump-and-Run Game" />
+    <meta property="og:description" content="A side-scrolling jump-and-run game with level mechanics and sprite animation, built in Processing." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.andrecreate.com/jump-and-run.html" />
+    <meta property="og:image" content="https://www.andrecreate.com/projects/jump-and-run-thumbnail.jpg" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+ <!-- Dark Mode detection based on localStorage -->
+ <script>
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+  }
+</script>
+
+    <header>
+      <h1><span class="brand-name">andre</span><span class="brand-highlight">create</span></h1>
+      <p>UX/UI Designer & Frontend Developer</p>
+    </header>
+
+    <main>
+      <section class="project-detail">
+        <h2>Jump and Run Game</h2>
+    
+        <p class="project-description">
+          <strong>Tools:</strong> Processing (Java)
+        </p>
+    
+        <p class="project-description">
+          This side-scrolling platformer game was created in Processing and features a small custom-designed level with obstacles, enemies, and responsive movement.
+        </p>
+    
+        <p class="project-description">
+          <strong>Gameplay Features:</strong>
+          <ul>
+            <li>Player movement with gravity-based jumping</li>
+            <li>Basic collision detection for platforms and enemies</li>
+            <li>Enemy sprites (crabs) that can be "defeated" by clicking</li>
+            <li>Level boundaries, background elements, and parallax effect</li>
+          </ul>
+        </p>
+    
+        <p class="project-description">
+          <strong>Design Focus:</strong><br>
+          The goal was to combine custom visuals with working game logic. All elements, including player and enemies, were illustrated and animated using sprite sheets.
+        </p>
+    
+        <p class="project-description">
+          <strong>Learning Outcome:</strong><br>
+          This project strengthened my understanding of object-based game architecture, real-time input handling, and animation control in code-driven environments.
+        </p>
+    
+        <div class="project-media">
+          <img src="projects/jump-and-run.gif" alt="Gameplay preview of 2D jump and run game" />
+        </div>
+    
+        <div style="text-align:center; margin-top: 50px;">
+          <a href="index.html" class="back-button">← Back to Overview</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 andrecreate. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
