@@ -20,6 +20,26 @@ function enableSmoothScrolling() {
   });
 }
 
+// Animation für die Projektkarten beim Scrollen
+const observeProjects = () => {
+  const projectCards = document.querySelectorAll('.project-card');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  projectCards.forEach(card => observer.observe(card));
+};
+
+// Füge diese Funktion zu deinem DOMContentLoaded-Event hinzu
+document.addEventListener('DOMContentLoaded', function() {
+  // ... dein bestehender Code
+  observeProjects();
+});
+
 // Filter projects by category
 function setupProjectFilters() {
   const filterButtons = document.querySelectorAll(".filter-buttons button");
@@ -130,47 +150,25 @@ function setupThemeToggle() {
     localStorage.setItem("theme", currentTheme);
   });
 }
-
-// Tabs for skills section
-function setupSkillsTabs() {
-  const tabButtons = document.querySelectorAll(".tab-btn");
-  const tabContents = document.querySelectorAll(".tab-content");
-
-  tabButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const tabId = button.getAttribute("data-tab");
-
-      tabButtons.forEach((btn) => btn.classList.remove("active"));
-      button.classList.add("active");
-
-      tabContents.forEach((content) => {
-        content.classList.toggle("active", content.id === tabId);
-      });
+// Animation für die Offer-Items beim Scrollen
+const observeOffers = () => {
+  const offerItems = document.querySelectorAll('.offer-item');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
     });
-  });
-}
+  }, { threshold: 0.1 });
+  
+  offerItems.forEach(item => observer.observe(item));
+};
 
-// Animate toolbox items on scroll
-function setupToolItemObserver() {
-  const toolItems = document.querySelectorAll('.tool-item');
-
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        } else {
-          entry.target.classList.remove('visible');
-        }
-      });
-    },
-    { threshold: 0.5 }
-  );
-
-  toolItems.forEach(item => {
-    observer.observe(item);
-  });
-}
+// Füge diese Funktion zu deinem DOMContentLoaded-Event hinzu
+document.addEventListener('DOMContentLoaded', function() {
+  // ... dein bestehender Code
+  observeOffers();
+});
 
 // Swap SVG icons on hover
 function setupHoverIcons() {

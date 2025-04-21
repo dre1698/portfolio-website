@@ -1,79 +1,143 @@
 /* ---------------------------------- */
-/* CSS RESET & COLOR VARIABLES       */
+/* CSS RESET & COLOR VARIABLES   */
 /* ---------------------------------- */
 
 :root {
-    --primary: #002147;         /* Navy Blue – Header/Footer */
-    --nav-bg: #003366;          /* Navigation Bar */
-    --background: #f4f4f4;      /* Page Background */
-    --white: #ffffff;
-    --text: #333333;            /* Main text */
-    --light-text: #ddd;         /* Lighter subtitle text */
-    --soft-text: #444444;       /* Body text inside sections */
-    --accent: #ff6347;          /* Tomato Red – Logo, hover, buttons */
-    --hover-accent: #e5533f;    /* Slightly darker red for hover effects */
-    --shadow: rgba(0, 0, 0, 0.05); /* General soft shadow */
-  }
+  /* Deine ursprünglichen Variablen */
+  --primary: #002147;         /* Navy Blue – Header/Footer */
+  --nav-bg: #0d3a6d;          /* Navigation Bar */
+  --background: #f4f4f4;      /* Page Background */
+  --white: #ffffff;
+  --text: #333333;            /* Main text */
+  --light-text: #ddd;         /* Lighter subtitle text */
+  --soft-text: #444444;       /* Body text inside sections */
+  --accent: #ff6347;          /* Tomato Red – Logo, hover, buttons */
+  --hover-accent: #00c2c2;    /* Cyan für Hover-Effekte */
+  --shadow: rgba(0, 33, 71, 0.1); /* General soft shadow */
   
-  html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-    background-color: var(--background);
-    color: var(--primary);
-    font-family: 'Poppins', sans-serif;
-  }
+  /* Neue Akzentfarben */
+  --secondary-accent: #4ECDC4;    /* Türkis als zweite Akzentfarbe */
+  --tertiary-accent: #FFD166;     /* Gold/Gelb als dritte Akzentfarbe */
+  --dark-accent: #d84a37;         /* Dunklere Version der Hauptakzentfarbe */
   
-  .page-content {
-    position: relative;
-  }
+  /* Hintergrundvarianten */
+  --card-bg: #ffffff;             /* Hintergrund für Karten */
+  --dark-bg: #001a38;             /* Dunklerer Hintergrund für Kontrast */
   
-    /* ---------------------------------- */
-  /* NAVIGATION                        */
+  /* Schatten und Effekte */
+  --shadow-sm: 0 2px 4px rgba(0, 33, 71, 0.1);  /* Kleiner Schatten */
+  --shadow-md: 0 4px 8px rgba(0, 33, 71, 0.12); /* Mittlerer Schatten */
+  --shadow-lg: 0 8px 16px rgba(0, 33, 71, 0.15); /* Großer Schatten */
+  
+  /* Verläufe */
+  --gradient-primary: linear-gradient(135deg, var(--accent), #ff8c7a);
+  --gradient-secondary: linear-gradient(135deg, var(--secondary-accent), #7df9f2);
+  
+  /* Übergänge */
+  --transition-fast: all 0.2s ease;
+  --transition-normal: all 0.3s ease;
+  --transition-slow: all 0.5s ease;
+  
+  /* Abstände (falls gewünscht) */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+}
+
+/* Schriftarten importieren */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  /* Schriftart-Variablen */
+  --font-headings: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* Grundlegende Typografie */
+h1, h2, h3, h4, h5, h6, .brand-name, .nav-logo {
+  font-family: var(--font-headings);
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  color: var(--primary);
+  font-family: var(--font-body);
+}
+
+.page-content {
+  position: relative;
+}
+  
   /* ---------------------------------- */
-  
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--nav-bg);
-    padding: 10px 0;
-    text-align: center;
-    z-index: 999;
-    box-shadow: 0 2px 6px var(--shadow);
-  }
-  
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  nav ul li {
-    display: inline;
-    margin: 0 15px;
-  }
-  
-  nav ul li a {
-    display: inline-block;
-    padding-bottom: 4px;
-    color: var(--white);
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease, transform 0.2s ease-in-out;
-  }
-  
-  nav ul li a:hover {
-    color: var(--hover-accent);
-    transform: scale(1.05);
-  }
-  
-  nav ul li a.active {
-    color: var(--accent);
-    border-bottom: 2px solid var(--accent);
-  }
+/* NAVIGATION                        */
+/* ---------------------------------- */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--nav-bg);
+  padding: 10px 0;
+  text-align: center;
+  z-index: 999;
+  box-shadow: var(--shadow-sm); /* Neue Schatten-Variable */
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 var(--spacing-md); /* Neue Abstands-Variable statt 15px */
+}
+
+nav ul li a {
+  display: inline-block;
+  padding: 6px 0; /* Mehr Padding für bessere Klickbarkeit */
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600; /* Etwas weniger fett als "bold" für bessere Lesbarkeit */
+  transition: var(--transition-normal); /* Neue Übergangs-Variable */
+  position: relative; /* Für den Hover-Effekt mit Unterstrich */
+}
+
+/* Animierte Unterstreichung beim Hover */
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px);
+}
+
+nav ul li a:hover::after {
+  width: 100%; /* Unterstreichung expandiert beim Hover */
+}
+
+/* Verbesserte active-Klasse */
+nav ul li a.active {
+  color: var(--accent);
+  border-bottom: 3px solid var(--accent);
+  font-weight: 700; /* Etwas stärker für bessere Hervorhebung */
+}
 
 
 /* ----------------------- */
@@ -82,105 +146,152 @@
 
 .skip-link {
   position: absolute;
-  top: -60px;                   /* hide it above the screen initially */
-  left: 10px;
+  top: -60px;                   /* Versteckt über dem Bildschirm */
+  left: var(--spacing-sm);      /* Neue Abstands-Variable statt 10px */
   background: var(--accent);    /* Tomato red */
   color: var(--white);          /* White text */
-  padding: 8px 12px;
+  padding: var(--spacing-xs) var(--spacing-sm); /* Neue Abstands-Variablen statt 8px 12px */
   z-index: 1001;
   text-decoration: none;
   font-weight: 600;
   border-radius: 6px;
-  transition: top 0.3s ease;
+  transition: var(--transition-normal); /* Neue Übergangs-Variable */
+  box-shadow: var(--shadow-md);         /* Schatten hinzufügen für bessere Sichtbarkeit */
 }
 
 .skip-link:focus {
-  top: 16px;                    /* slides down into view when focused */
+  top: 16px;                    /* Rutscht herunter, wenn fokussiert */
+  outline: 2px solid var(--white); /* Bessere Fokus-Sichtbarkeit */
 }
 
-   /* ---------------------------------- */
-  /* Dark Mode Switch                            */
-  /* ---------------------------------- */
-  
-
-  .theme-toggle {
-    position: absolute;
-    right: 20px;
-    top: 12px;
-    cursor: pointer;
-    user-select: none;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: transform 0.2s ease;
-  }
-  
-  .theme-toggle:hover {
-    transform: scale(1.1);
-  }
-  
-  .theme-toggle .icon {
-    width: 22px;
-    height: 22px;
-    transition: 
-      color 0.3s ease,
-      transform 0.3s ease;
-    transform: scale(0.9);
-    color: #ffffff;
-  }
-  
-  /* Active icon highlight */
-  body:not(.dark-mode) .sun {
-    color: var(--accent);        /* Sun = red in light mode */
-    transform: scale(1.1);
-  }
-  
-  body:not(.dark-mode) .moon {
-    color: #ffffff;              /* Moon = white in light mode */
-    transform: scale(0.9);
-  }
-  
-  body.dark-mode .moon {
-    color: var(--accent);        /* Moon = red in dark mode */
-    transform: scale(1.1);
-  }
-  
-  body.dark-mode .sun {
-    color: #ffffff;              /* Sun = white in dark mode */
-    transform: scale(0.9);
-  }
+.skip-link:hover {
+  background: var(--dark-accent); /* Dunklere Akzentfarbe beim Hover */
+}
 
   /* ---------------------------------- */
-  /* HEADER                            */
+/* Dark Mode Switch                   */
+/* ---------------------------------- */
+
+.theme-toggle {
+  position: absolute;
+  right: var(--spacing-lg); /* Neue Abstands-Variable statt 20px */
+  top: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%; /* Perfekter Kreis statt 40% */
+  padding: 6px; /* Etwas mehr Padding für bessere Klickbarkeit */
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition-fast); /* Neue Übergangs-Variable */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtiler Rahmen für mehr Tiefe */
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.2); /* Leicht hellerer Hintergrund beim Hover */
+}
+
+.theme-toggle .icon {
+  width: 22px;
+  height: 22px;
+  transition: var(--transition-normal); /* Neue Übergangs-Variable */
+  transform: scale(0.9);
+  color: var(--white); /* Variable statt direktem #ffffff */
+}
+
+/* Active icon highlight */
+body:not(.dark-mode) .sun {
+  color: var(--accent);        /* Sonne = Akzentfarbe im Light Mode */
+  transform: scale(1.1);
+}
+
+body:not(.dark-mode) .moon {
+  color: var(--white);         /* Mond = weiß im Light Mode */
+  transform: scale(0.9);
+}
+
+body.dark-mode .moon {
+  color: var(--accent);        /* Mond = Akzentfarbe im Dark Mode */
+  transform: scale(1.1);
+}
+
+body.dark-mode .sun {
+  color: var(--white);         /* Sonne = weiß im Dark Mode */
+  transform: scale(0.9);
+}
   /* ---------------------------------- */
+/* HEADER                            */
+/* ---------------------------------- */
+
+header {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--primary);
+  color: var(--white);
+  text-align: center;
+  padding: calc(var(--spacing-xl) * 2) var(--spacing-lg) var(--spacing-xl); /* Variablen statt fester Pixel */
+}
+
+/* Subtiles Hintergrundmuster hinzufügen */
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+/* Inhalt über dem Muster halten */
+header > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Animation für die Textelemente im Header */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+header h1 {
+  font-size: 3.5rem;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.5rem;
+  color: inherit;
+  animation: fadeIn 0.6s ease-out forwards; /* Animation hinzugefügt */
+}
+
+.brand-name {
+  color: var(--accent);
+  font-weight: 700;
+  position: relative; /* Für mögliche spätere Effekte */
+}
+
+.brand-highlight {
+  color: var(--white);
+  font-weight: 700;
+}
+
+header p {
+  font-size: 1.5em;
+  font-weight: 400;
+  margin-top: var(--spacing-sm); /* Variable statt fester Pixel */
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.5px;
+  animation: fadeIn 0.6s ease-out 0.2s forwards;
+  opacity: 0; /* Startpunkt für die Animation */
+  animation-fill-mode: forwards;
+}
   
-  header {
-    background-color: var(--primary);
-    color: var(--white);
-    text-align: center;
-    padding: 120px 20px 60px;
-  }
-  
-  header h1 {
-    font-size: 4em;
-    font-weight: 600;
-    margin: 0;
-    color: inherit;
-  }
-  
-  .brand-name {
-    color: var(--accent);
-  }
-  
-  .brand-highlight {
-    color: var(--white);
-  }
-  
-  header p {
-    font-size: 1.5em;
-    margin-top: 10px;
-    color: var(--light-text);
-  }
   
 
 
@@ -195,9 +306,10 @@
     padding: 30px 20px;
     background: var(--white);
     border-radius: 8px;
-    box-shadow: 0 4px 12px var(--shadow);
+    box-shadow: var(--shadow-md);
     border-top: 1px solid var(--shadow);
-    scroll-margin-top: 150px; /* Offsets for fixed nav */
+    scroll-margin-top: 150px; 
+    transition: var(--transition-normal);/* Offsets for fixed nav */
   }
   
   section h2 {
@@ -207,7 +319,7 @@
     letter-spacing: 0.5px;
     display: inline-block;
     text-decoration: underline;
-    text-decoration-color: var(--accent);
+    text-decoration-color: var(--secondary-accent);
     text-decoration-thickness: 3px;
     text-underline-offset: 6px;
     margin-bottom: 30px;
@@ -217,152 +329,538 @@
     font-size: 1.1em;
     line-height: 1.6;
     margin-bottom: 16px;
-    color: var(--soft-text);
+    color: var(--text-secondary);
   }
   
  
-  /* ---------------------------------- */
-  /* FOOTER                            */
-  /* ---------------------------------- */
+ /* ---------------------------------- */
+/* FOOTER                            */
+/* ---------------------------------- */
+
+footer {
+  text-align: center;
+  padding: var(--spacing-sm) var(--spacing-md); /* Variablen statt 10px */
+  background: var(--primary);
+  color: var(--white);
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Subtiler Schatten nach oben */
+}
+
+footer h2 {
+  margin-top: 0;
+  font-size: 1.8em;
+  font-family: var(--font-headings); /* Neue Typografie-Variable */
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+}
+
+footer p:first-of-type {
+  margin-bottom: var(--spacing-md); /* Variable statt 20px */
+  font-size: 1.1em;
+  color: var(--light-text);
+  font-family: var(--font-body); /* Neue Typografie-Variable */
+}
+
+/* Copyright Text (falls vorhanden) */
+.copyright {
+  font-size: 0.9em;
+  color: var(--light-text);
+  margin-top: var(--spacing-md);
+}
   
-  footer {
-    text-align: center;
-    padding: 10px;
-    background: var(--primary);
-    color: var(--white);
-    position: relative;
-    bottom: 0;
-    width: 100%;
+ /* ---------------------------------- */
+/* RESPONSIVE DESIGN                 */
+/* ---------------------------------- */
+
+/* Tablet und kleinere Geräte */
+@media (max-width: 768px) {
+  section {
+    margin: var(--spacing-md) var(--spacing-sm); /* Variablen statt 20px 10px */
+    padding: var(--spacing-md); /* Variable statt 15px */
   }
   
-  footer h2 {
-    margin-top: 0;
-    font-size: 1.8em;
-    text-decoration: underline;
-    text-decoration-color: var(--accent);
-    text-decoration-thickness: 3px;
-    text-underline-offset: 6px;
+  /* Verbesserte Navigation für Tablets */
+  nav ul li {
+    margin: 0 var(--spacing-sm); /* Engere Abstände zwischen Menüpunkten */
   }
   
-  footer p:first-of-type {
-    margin-bottom: 20px;
-    font-size: 1.1em;
-    color: var(--light-text);
+  /* Verbesserte Darstellung des Headers */
+  header {
+    padding: 100px var(--spacing-md) 40px; /* Etwas weniger Padding auf Tablets */
   }
-  
-  /* ---------------------------------- */
-  /* RESPONSIVE DESIGN                 */
-  /* ---------------------------------- */
-  
-  @media (max-width: 768px) {
-    section {
-      margin: 20px 10px;
-      padding: 15px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    header h1 {
-      font-size: 2.5em;
-    }
-  
-    header p {
-      font-size: 1.2em;
-    }
+}
+
+/* Mobilgeräte */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2.5rem; /* rem statt em für bessere Konsistenz */
   }
 
-
-    /* ---------------------------------- */
-  /* ABOUT IMAGE                       */
-  /* ---------------------------------- */
+  header p {
+    font-size: 1.2rem; /* rem statt em */
+  }
   
+  /* Verbesserte mobile Navigation */
+  nav ul li {
+    margin: 0 var(--spacing-xs); /* Noch engere Abstände */
+  }
+  
+  /* Anpassungen für Abschnitte auf Mobilgeräten */
+  section h2 {
+    font-size: 1.6rem; /* Etwas kleinere Überschriften */
+  }
+  
+  section p {
+    font-size: 1rem; /* Standardgröße für bessere Lesbarkeit */
+    line-height: 1.5; /* Etwas engere Zeilen */
+  }
+}
+
+/* Sehr kleine Geräte */
+@media (max-width: 320px) {
+  header h1 {
+    font-size: 2rem; /* Noch kleiner für sehr kleine Bildschirme */
+  }
+  
+  nav ul li a {
+    font-size: 0.9rem; /* Kleinere Navigationstexte */
+  }
+}
+
+
+  /* ---------------------------------- */
+/* ABOUT SECTION                     */
+/* ---------------------------------- */
+
+.about-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-lg); /* Variable statt 20px */
+  flex-wrap: wrap;
+  margin-bottom: var(--spacing-lg);
+}
+
+.about-photo {
+  width: 150px; /* Etwas größer für mehr Präsenz */
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: var(--shadow-md); /* Neue Schatten-Variable */
+  border: 3px solid var(--white); /* Weißer Rahmen für mehr Kontrast */
+  transition: var(--transition-normal); /* Animation hinzufügen */
+}
+
+.about-photo:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+
+.about-text {
+  flex: 1;
+  min-width: 250px; /* Verhindert zu schmale Textblöcke */
+}
+
+.about-text p {
+  margin-bottom: var(--spacing-md);
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
   .about-content {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
   }
   
   .about-photo {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0 4px 10px var(--shadow);
+    margin-bottom: var(--spacing-md);
+  }
+}
+  
+
+/* ---------------------------------- */
+/* TOOLBOX – CAPSULE STYLE          */
+/* ---------------------------------- */
+
+#toolbox {
+  position: relative;
+  overflow: hidden;
+}
+
+.tool-collection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px 0;
+}
+
+/* Tool Capsules */
+.tool-capsule {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px 8px 12px;
+  background: var(--white);
+  border-radius: 50px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-left: 4px solid transparent;
+  position: relative;
+}
+
+/* Farbkodierung nach Kategorie */
+.tool-capsule[data-category="development"] {
+  border-left-color: var(--secondary-accent);
+}
+
+.tool-capsule[data-category="design"] {
+  border-left-color: var(--accent);
+}
+
+.tool-capsule[data-category="utilities"] {
+  border-left-color: var(--tertiary-accent);
+}
+
+.tool-capsule:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+.tool-capsule i, 
+.tool-capsule img {
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+  /* Farbe für die Lucide-Icons */
+  color: var(--primary);
+  stroke: var(--primary);
+}
+
+/* Für weiße SVG-Icons auf hellem Hintergrund */
+.tool-capsule img {
+  filter: brightness(0); /* Macht weiße Icons schwarz */
+}
+
+.tool-capsule:hover img,
+.tool-capsule:hover i {
+  transform: rotate(-5deg) scale(1.1);
+}
+
+.tool-capsule span {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+/* Featured tools */
+.tool-capsule.featured {
+  box-shadow: 0 3px 10px rgba(255, 99, 71, 0.2);
+  animation: subtle-glow 3s infinite alternate;
+}
+
+@keyframes subtle-glow {
+  0% { box-shadow: 0 3px 10px rgba(255, 99, 71, 0.2); }
+  100% { box-shadow: 0 5px 15px rgba(255, 99, 71, 0.35); }
+}
+
+/* Tooltip-Position nach oben */
+.tool-capsule::after {
+  content: attr(data-details);
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100%) scale(0.8);
+  background: var(--primary);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  white-space: normal;
+  width: max-content;
+  max-width: 200px;
+  text-align: center;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tool-capsule:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-100%) scale(1);
+}
+
+/* Tooltip-Pfeil anpassen */
+.tool-capsule::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--primary);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.tool-capsule:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Kategorie-Legende */
+.tool-legend {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.legend-color.development {
+  background-color: var(--secondary-accent);
+}
+
+.legend-color.design {
+  background-color: var(--accent);
+}
+
+.legend-color.utilities {
+  background-color: var(--tertiary-accent);
+}
+
+/* Medienabfragen für Responsivität */
+@media (max-width: 768px) {
+  .tool-capsule::after {
+    max-width: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tool-legend {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
   }
   
+  .tool-capsule {
+    padding: 6px 12px 6px 10px;
+  }
+  
+  .tool-capsule::after {
+    max-width: 140px;
+    font-size: 0.75rem;
+  }
+}
 /* ---------------------------------- */
-/* OFFER TIMELINE (clean + aligned)  */
+/* OFFER CARDS & ICONS               */
 /* ---------------------------------- */
 
 .offer-timeline {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  padding-left: 0; /* no offset anymore */
-}
-
-/* draw vertical line as independent element */
-.offer-timeline::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 36px; /* aligns with center of icon */
-  width: 3px;
-  height: 100%;
-  background-color: var(--primary);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Genau 3 Spalten für 3 Items */
+  gap: 30px;
+  margin-top: 40px;
 }
 
 .offer-item {
   position: relative;
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
+  background: var(--white);
+  border-radius: 12px;
+  padding: 30px 25px 25px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-normal);
+  overflow: hidden;
+  z-index: 1;
 }
 
-.offer-icon {
+.offer-item:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Farbiger Akzentstreifen oben */
+.offer-item::before {
+  content: '';
   position: absolute;
-  left: 16px;
-  top: 4px;
-  background-color: var(--accent);
-  color: white;
-  width: 40px;
-  height: 40px;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  z-index: 1;
+  transition: var(--transition-normal);
+}
+
+/* Farbkodierung nach Dienst */
+.offer-item:nth-child(1)::before {
+  background: var(--accent); /* Visual Identity = Koralle */
+}
+
+.offer-item:nth-child(2)::before {
+  background: var(--secondary-accent); /* UI/UX = Türkis */
+}
+
+.offer-item:nth-child(3)::before {
+  background: var(--tertiary-accent); /* Development = Gold */
+}
+
+/* Icon-Container */
+.offer-icon {
+  position: relative;
+  margin-bottom: 20px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 6px var(--shadow);
-  z-index: 2;
+  transition: var(--transition-normal);
+}
+
+/* Farbkodierung der Icons */
+.offer-item:nth-child(1) .offer-icon {
+  background-color: rgba(255, 99, 71, 0.1); /* Leichtes Koralle */
+  color: var(--accent);
+}
+
+.offer-item:nth-child(2) .offer-icon {
+  background-color: rgba(78, 205, 196, 0.1); /* Leichtes Türkis */
+  color: var(--secondary-accent);
+}
+
+.offer-item:nth-child(3) .offer-icon {
+  background-color: rgba(255, 209, 102, 0.1); /* Leichtes Gold */
+  color: var(--tertiary-accent);
 }
 
 .offer-icon i {
-  width: 11px;
-  height: 11px;
+  width: 28px;
+  height: 28px;
+  stroke-width: 2px;
 }
 
-.offer-content {
-  padding-left: 72px; /* enough space for icon + spacing */
+.offer-item:hover .offer-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Subtiler Hintergrundeffekt */
+.offer-item::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  right: -60px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.03);
+  z-index: -1;
+  transition: var(--transition-normal);
+}
+
+.offer-item:nth-child(1):hover::after {
+  background: rgba(255, 99, 71, 0.05);
+}
+
+.offer-item:nth-child(2):hover::after {
+  background: rgba(78, 205, 196, 0.05);
+}
+
+.offer-item:nth-child(3):hover::after {
+  background: rgba(255, 209, 102, 0.05);
 }
 
 .offer-content h3 {
-  margin: 0 0 10px;
-  font-size: 1.2em;
-  color: var(--nav-bg);
+  margin: 0 0 15px;
+  font-size: 1.4em;
+  font-weight: 600;
+  color: var(--primary);
+  font-family: var(--font-headings);
 }
 
 .offer-content p {
   margin: 0;
-  color: var(--soft-text);
+  color: var(--text-secondary);
   font-size: 1em;
-  line-height: 1.5;
+  line-height: 1.6;
+  font-family: var(--font-body);
 }
-  
- 
-  
 
+/* Animation beim Scrollen */
+.offer-item {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.offer-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.offer-item:nth-child(1).visible {
+  transition-delay: 0.1s;
+}
+
+.offer-item:nth-child(2).visible {
+  transition-delay: 0.3s;
+}
+
+.offer-item:nth-child(3).visible {
+  transition-delay: 0.5s;
+}
+
+/* Responsive Layout verbessert */
+@media (max-width: 992px) {
+  .offer-timeline {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  /* Gleiche Höhe auf mittleren Bildschirmen erzwingen */
+  .offer-item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .offer-content {
+    flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .offer-timeline {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .offer-item {
+    padding: 25px 20px 20px;
+  }
+}
   
   /* ---------------------------------- */
   /* SKILLS TAGS                       */
@@ -456,239 +954,501 @@
     }
   }*/
 
+
 /* ----------------------- */
 /*  PROJECTS SECTION       */
 /* ----------------------- */
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 24px;
-  margin-top: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
 }
-  
-  .project-card {
-    background-color: var(--primary);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px var(--shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .project-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-  }
-  
-  .project-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    display: block;
-  }
-  
-  .project-info {
-    padding: 16px 20px;
-  }
-  
-  .project-info h3 {
-    margin-top: 0;
-    margin-bottom: 8px;
-    color: var(--accent);
-    font-size: 1.2em;
-  }
-  
-  .project-info p {
-    color: var(--white);
-    font-size: 0.95em;
-    line-height: 1.5;
-    margin-bottom: 12px;
-  }
-  
-  .project-info a {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95em;
-    transition: color 0.3s ease;
-  }
-  
-  .project-info a:hover {
-    color: var(--hover-accent);
-  }
-  
-  /* Optional: Tags */
-  .project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 12px;
-  }
-  
-  .project-tags .tag {
-    background-color: var(--nav-bg);
-    color: var(--white);
-    font-size: 0.75em;
-    padding: 5px 10px;
-    border-radius: 12px;
-    font-weight: 500;
-    box-shadow: 0 2px 4px var(--shadow);
-  }
-  
-  /* Optional: Coming Soon */
-  .project-card.coming-soon {
-    background-color: rgba(255, 255, 255, 0.03);
-    border: 2px dashed var(--accent);
-    text-align: center;
-    padding: 30px 20px;
-  }
-  
-  .project-card.coming-soon .project-tags {
-    justify-content: center;
-  }
 
-  /*.project-card img.tall-preview {
-    object-fit: contain;
-    width: 100%;
-    max-height: 320px;
-    display: block;
-    margin: 0 auto;
-    border-radius: 8px;
-    background-color: #fff;
-  }*/
+.project-card {
+  background-color: var(--primary);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-normal);
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(30px);
+}
 
-  .filter-buttons {
-    text-align: center;
-    margin-bottom: 2rem;
-    margin-top: -10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-  }
-  
-  .filter-buttons button {
-    padding: 8px 16px;
-    border: none;
-    background: var(--nav-bg);
-    color: var(--white);
-    font-weight: 600;
-    border-radius: 20px;
-    box-shadow: 0 2px 6px var(--shadow);
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .filter-buttons button:hover {
-    background-color: var(--accent);
-    color: white;
-    transform: scale(1.05);
-  }
-  
-  .filter-buttons button.active {
-    background-color: var(--accent);
-    color: white;
-  }
+/* Animation beim Scrollen */
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Gestaffelte Animation */
+.project-card:nth-child(3n+1).visible {
+  transition-delay: 0.1s;
+}
+
+.project-card:nth-child(3n+2).visible {
+  transition-delay: 0.2s;
+}
+
+.project-card:nth-child(3n+3).visible {
+  transition-delay: 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+  z-index: 2;
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: var(--transition-normal);
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.05);
+}
+
+/* Overlay-Effekt beim Hover */
+.project-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 33, 71, 0) 70%, rgba(0, 33, 71, 0.9) 100%);
+  opacity: 0.7;
+  transition: var(--transition-normal);
+  pointer-events: none;
+}
+
+.project-card:hover::after {
+  opacity: 0.9;
+}
+
+.project-info {
+  padding: 20px 24px 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+.project-info h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-size: 1.3em;
+  font-family: var(--font-headings);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  position: relative;
+  transition: var(--transition-normal);
+}
+
+.project-card:hover .project-info h3 {
+  transform: translateY(-2px);
+}
+
+.project-info p {
+  color: var(--white);
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  font-family: var(--font-body);
+  flex: 1;
+}
+
+.project-info a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95em;
+  transition: var(--transition-normal);
+  display: inline-flex;
+  align-items: center;
+  margin-top: auto;
+}
+
+.project-info a i {
+  margin-left: 5px;
+  transition: var(--transition-normal);
+}
+
+.project-info a:hover {
+  color: var(--secondary-accent);
+}
+
+.project-info a:hover i {
+  transform: translateX(3px);
+}
+
+/* Tags */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.project-tags .tag {
+  background-color: rgba(13, 58, 109, 0.7); /* Semitransparentes Nav-Bg */
+  color: var(--white);
+  font-size: 0.75em;
+  padding: 6px 12px;
+  border-radius: 30px;
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
+}
+
+.project-tags .tag:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Kategorie-basierte Tag-Farben angepasst an "What I Offer" */
+.project-tags .tag.identity {
+  background-color: rgba(255, 99, 71, 0.2);
+  color: var(--accent);
+}
+
+.project-tags .tag.ux {
+  background-color: rgba(78, 205, 196, 0.2);
+  color: var(--secondary-accent);
+}
+
+.project-tags .tag.development {
+  background-color: rgba(255, 209, 102, 0.2);
+  color: var(--tertiary-accent);
+}
+
+/* Coming Soon */
+.project-card.coming-soon {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 2px dashed var(--accent);
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.project-card.coming-soon .project-tags {
+  justify-content: center;
+}
+
+.project-card.coming-soon h3 {
+  color: var(--accent);
+}
+
+/* Pfeile für Links hinzufügen */
+.project-info a::after {
+  content: "→";
+  margin-left: 5px;
+  transition: var(--transition-normal);
+  display: inline-block;
+}
+
+.project-info a:hover::after {
+  transform: translateX(3px);
+}
+
+/* Filter Buttons */
+.filter-buttons {
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.filter-buttons button {
+  padding: 10px 20px;
+  border: none;
+  background: var(--nav-bg);
+  color: var(--white);
+  font-weight: 600;
+  border-radius: 50px;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: var(--transition-normal);
+  font-family: var(--font-body);
+  position: relative;
+  overflow: hidden;
+}
+
+.filter-buttons button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--accent);
+  transform: translateY(3px);
+  transition: var(--transition-normal);
+}
+
+.filter-buttons button:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.filter-buttons button:hover::after {
+  transform: translateY(0);
+}
+
+.filter-buttons button.active {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.filter-buttons button.active::after {
+  transform: translateY(0);
+}
 
 
-  .project-detail {
-    max-width: 1000px;
-    margin: 100px auto;
-    padding: 0 20px;
-    text-align: center;
-  }
 
-  .project-description {
-    font-size: 1.1em;
-    color: var(--soft-text);
-    margin-bottom: 40px;
-  }
-  
-  .project-media {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    align-items: center;
-  }
-  
-  .project-media img {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 14px var(--shadow);
-    object-fit: contain;
-    margin-bottom: 20px;
-  }
-  
-  /* Styled back-button */
-  .back-button {
-    display: inline-block;
-    background-color: var(--primary);
-    color: var(--white);
-    padding: 10px 20px;
-    font-weight: 600;
-    border-radius: 25px;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .back-button:hover {
-    background-color: var(--accent);
-    transform: scale(1.05);
-  }
-   /* ---------------------------------- */
-  /* CONTACT SECTION                   */
+/* Projektdetailseite */
+.project-detail {
+  max-width: 1000px;
+  margin: 100px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.project-description {
+  font-size: 1.1em;
+  color: var(--soft-text);
+  margin-bottom: 40px;
+  font-family: var(--font-body);
+  line-height: 1.8;
+}
+
+.project-media {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+}
+
+.project-media img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  object-fit: contain;
+  margin-bottom: 20px;
+  transition: var(--transition-normal);
+}
+
+.project-media img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Styled back-button */
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: var(--transition-normal);
+  font-family: var(--font-headings);
+  box-shadow: var(--shadow-md);
+}
+
+.back-button i {
+  margin-right: 8px;
+  transition: var(--transition-normal);
+}
+
+.back-button:hover {
+  background-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.back-button:hover i {
+  transform: translateX(-3px);
+}
   /* ---------------------------------- */
-  
-  #contact {
-    background: var(--primary);
-    color: var(--white);
-    text-align: center;
-    padding: 60px 20px;
-  }
-  
-  #contact h2 {
-    margin-top: 0;
-    text-decoration: underline;
-    text-decoration-color: var(--accent);
-    text-decoration-thickness: 3px;
-    text-underline-offset: 6px;
-  }
-  
-  #contact p {
-    color: var(--light-text);
-    font-size: 1.1em;
-    margin-bottom: 20px;
-  }
+/* CONTACT SECTION                   */
+/* ---------------------------------- */
 
-  /* ---------------------------------- */
-  /* SOCIAL ICON LINKS                 */
-  /* ---------------------------------- */
+#contact {
+  background: var(--primary);
+  color: var(--white);
+  text-align: center;
+  padding: 80px 20px 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtiles Hintergrundmuster hinzufügen (wie im Header) */
+#contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+#contact > * {
+  position: relative;
+  z-index: 2;
+}
+
+#contact h2 {
+  margin-top: 0;
+  font-family: var(--font-headings);
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+  margin-bottom: 20px;
+}
+
+#contact p {
+  color: var(--light-text);
+  font-size: 1.3em;
+  margin-bottom: 40px;
+  font-family: var(--font-body);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+/* ---------------------------------- */
+/* SOCIAL ICON LINKS                 */
+/* ---------------------------------- */
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.social-links a {
+  background-color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transition: var(--transition-normal);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Kreisförmiger Hover-Effekt */
+.social-links a::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: var(--hover-accent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+  z-index: 1;
+}
+
+.social-links a:hover::before {
+  width: 150%;
+  height: 150%;
+}
+
+.social-links a img {
+  width: 28px;
+  height: 28px;
+  display: block;
+  position: relative;
+  z-index: 2;
+  transition: var(--transition-normal);
+}
+
+.social-links a:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.social-links a:hover img {
+  transform: scale(1.15);
+}
+
+/* Unterschiedliche Farben für verschiedene soziale Netzwerke */
+.social-links a[aria-label="Email"] {
+  background-color: var(--accent);
+}
+
+.social-links a[aria-label="GitHub"] {
+  background-color: #333;
+}
+
+.social-links a[aria-label="LinkedIn"] {
+  background-color: var(--secondary-accent);
+}
+
+.social-links a[aria-label="Instagram"] {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+/* Dark Mode Anpassungen */
+body.dark-mode .social-links a[aria-label="GitHub"] {
+  background-color: #555;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 480px) {
+  .social-links {
+    gap: 16px;
+  }
   
   .social-links a {
-    background-color: var(--accent);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 10px;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
-    box-shadow: 0 4px 8px var(--shadow);
-  }
-  
-  .social-links a:hover {
-    background-color: var(--hover-accent);
-    transform: scale(1.1);
+    width: 50px;
+    height: 50px;
   }
   
   .social-links a img {
     width: 24px;
     height: 24px;
-    display: block;
   }
+  
+  #contact p {
+    font-size: 1.1em;
+  }
+}
   
   /* ---------------------------------- */
   /* SCROLL TO TOP BUTTON              */
@@ -724,158 +1484,53 @@
   }
 
 
- /* ---------------------------------- */
+/* ---------------------------------- */
 /* HEADER ANIMATION                  */
 /* ---------------------------------- */
 
 .nav-logo {
-    font-weight: 600;
-    font-size: 1.4em;
-    color: var(--accent);
-    position: absolute;
-    left: 20px;
-    top: 12px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-  }
-  
-  header h1 {
-    transition: transform 0.1s linear, opacity 0.1s linear;
-    transform-origin: left center;
-  }
-
-  header p {
-    transition: transform 0.4s ease, opacity 0.4s ease;
-  }
-  
-  header p.scrolling-subtitle {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
-
-/* ---------------------------------- */
-/* TOOLBOX – HORIZONTAL SCROLL STYLE */
-/* ---------------------------------- */
-
-.tool-scroll {
-  display: flex;
-  overflow-x: auto;
-  overflow-y: hidden;
-  gap: 16px;
-  padding: 20px 0 60px 0;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  overscroll-behavior-x: contain;
-}
-
-.tool-scroll::-webkit-scrollbar {
-  display: none;
-}
-
-.scroll-start-spacer,
-.scroll-end-spacer {
-  flex: 0 0 24px;
+  font-weight: 700;
+  font-size: 1.4em;
+  color: var(--accent);
+  position: absolute;
+  left: var(--spacing-lg); /* Variable statt 20px */
+  top: 12px;
+  opacity: 0;
+  transition: var(--transition-normal); /* Variable statt direkter Angabe */
   pointer-events: none;
 }
 
-.tool-item {
+header h1 {
+  font-size: 3.5rem;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.5rem;
+  color: inherit;
+  animation: fadeIn 0.6s ease-out forwards;
+  /* Zusätzliche Scroll-Animationseigenschaften */
+  transition: transform 0.1s linear, opacity 0.1s linear;
+  transform-origin: left center;
+}
+
+header p {
+  font-size: 1.5em;
+  font-weight: 400;
+  margin-top: var(--spacing-sm);
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.5px;
+  /* FadeIn-Animation */
+  animation: fadeIn 0.6s ease-out 0.2s forwards;
+  opacity: 0; 
+  animation-fill-mode: forwards;
+  /* Scroll-Animation-Eigenschaften */
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+header p.scrolling-subtitle {
+  transform: translateY(-20px);
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  position: relative;
-  min-width: 140px;
-  scroll-snap-align: start;
-  background-color: var(--primary);
-  color: var(--white);
-  padding: 14px 20px;
-  border-radius: 16px;
-  font-weight: 600;
-  text-align: center;
-  box-shadow: 0 4px 8px var(--shadow);
-  flex-shrink: 0;
-}
-
-.tool-item.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.tool-item span {
-  transition: transform 0.3s ease, color 0.3s ease;
-  display: inline-block; /* wichtig für transform */
-}
-
-.tool-item:hover span {
-  transform: scale(1.05); /* leicht größer beim Hover */
-  color: var(--accent);   /* wie vorher: tomato red */
-}
-
-.tool-item svg,
-.tool-item img {
-  display: block;
-  margin: 0 auto 10px;
-  height: 28px;
-  width: auto;
-  transition: transform 0.3s ease, stroke 0.3s ease, filter 0.3s ease;
-  stroke: var(--white);
-}
-
-.tool-item:hover svg {
-  transform: scale(1.15);
-  stroke: var(--accent);
-}
-
-.tool-item:hover img {
-  transform: scale(1.15);
 }
 
 
-.tool-item {
-  position: relative;
-  /* restliche Styles wie bisher */
-}
-
-.tool-item::after {
-  content: attr(data-tooltip);
-  opacity: 0;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, 10px);
-  background: var(--accent);
-  color: white;
-  font-size: 0.75em;
-  padding: 6px 10px;
-  border-radius: 6px;
-  white-space: nowrap;
-  pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 10;
-}
-
-/* Tooltip-Pfeil (optional) */
-.tool-item::before {
-  content: '';
-  position: absolute;
-  top: calc(100% - 1px);
-  left: 50%;
-  transform: translateX(-50%);
-  border: 6px solid transparent;
-  border-top-color: var(--hover-accent);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 10;
-}
-
-/* Show on hover */
-.tool-item:hover::after,
-.tool-item:hover::before {
-  opacity: 1;
-  transform: translate(-50%,40%);
-}
   /* ---------------------------------- */
   /* FADE-IN SECTION ANIMATION         */
   /* ---------------------------------- */
@@ -941,10 +1596,79 @@ body.dark-mode #projects p {
   color: #ffffff;
 }
 
-/* Skill tags — navy blue with white text */
-body.dark-mode .skill-tag {
+/* Dark Mode Anpassungen tools*/
+body.dark-mode .tool-capsule {
+  background: var(--dark-bg);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .tool-capsule span {
+  color: var(--white);
+}
+
+body.dark-mode .tool-capsule i,
+body.dark-mode .tool-capsule img {
+  color: var(--white);
+  stroke: var(--white);
+  /* Für SVG-Icons mit filter invert */
+  filter: brightness(0) invert(1);
+}
+
+/* Dark Mode Anpassungen offer*/
+body.dark-mode .offer-item {
+  background: var(--dark-bg);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode .offer-content h3 {
+  color: var(--white);
+}
+
+body.dark-mode .offer-content p {
+  color: var(--light-text);
+}
+
+body.dark-mode .offer-item::after {
+  background: rgba(255, 255, 255, 0.03); /* Hellerer Hintergrund im Dark Mode */
+}
+
+body.dark-mode .offer-item:nth-child(1):hover::after {
+  background: rgba(255, 99, 71, 0.1);
+}
+
+body.dark-mode .offer-item:nth-child(2):hover::after {
+  background: rgba(78, 205, 196, 0.1);
+}
+
+body.dark-mode .offer-item:nth-child(3):hover::after {
+  background: rgba(255, 209, 102, 0.1);
+}
+/* Dark Mode Anpassungen */
+body.dark-mode .project-card {
+  background-color: var(--dark-bg);
+}
+
+body.dark-mode .filter-buttons button {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .filter-buttons button.active {
   background-color: var(--primary);
-  color: #ffffff;
+}
+
+body.dark-mode .project-tags .tag {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+body.dark-mode .project-tags .tag.identity {
+  background-color: rgba(255, 99, 71, 0.3);
+}
+
+body.dark-mode .project-tags .tag.ux {
+  background-color: rgba(78, 205, 196, 0.3);
+}
+
+body.dark-mode .project-tags .tag.development {
+  background-color: rgba(255, 209, 102, 0.3);
 }
 
 /* Social media icon circles */
