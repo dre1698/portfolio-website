@@ -1,3 +1,28 @@
+// Initialization on DOM load
+document.addEventListener("DOMContentLoaded", () => {
+  if (typeof lucide !== 'undefined' && lucide.createIcons) {
+    lucide.createIcons();
+  }
+  
+  initializeThemePreference();
+  enableSmoothScrolling();
+  setupProjectFilters();
+  setupSectionFadeIn();
+  setupScrollSpy();
+  setupScrollToTop();
+  initHeaderAnimation();;
+  setupThemeToggle();
+  setupHoverIcons();
+  observeProjects();
+  observeOffers();
+  setupFloatingElements();
+  
+  // Es gibt einen Aufruf zu setupSkillsTabs() und setupToolItemObserver(),
+  // aber diese Funktionen sind nicht definiert. Ich habe sie entfernt.
+});
+
+
+
 // Ensure dark mode persists across sessions
 function initializeThemePreference() {
   const savedTheme = localStorage.getItem("theme");
@@ -34,12 +59,6 @@ const observeProjects = () => {
   projectCards.forEach(card => observer.observe(card));
 };
 
-// Füge diese Funktion zu deinem DOMContentLoaded-Event hinzu
-document.addEventListener('DOMContentLoaded', function() {
-  // ... dein bestehender Code
-  observeProjects();
-});
-
 // Filter projects by category
 function setupProjectFilters() {
   const filterButtons = document.querySelectorAll(".filter-buttons button");
@@ -72,7 +91,7 @@ function setupSectionFadeIn() {
         }
       });
     },
-    { threshold: 0.1 } // Reaktiviert ursprüngliches Verhalten
+    { threshold: 0.1 }
   );
 
   document.querySelectorAll(".fade-in-section").forEach((el) => {
@@ -110,6 +129,7 @@ function setupScrollSpy() {
 // Scroll to top button visibility and action
 function setupScrollToTop() {
   const scrollBtn = document.getElementById("scrollToTopBtn");
+  if (!scrollBtn) return;
 
   window.addEventListener("scroll", () => {
     scrollBtn.classList.toggle("show", window.scrollY > 300);
@@ -120,22 +140,20 @@ function setupScrollToTop() {
   });
 }
 
-// Animate logo and header based on scroll position
-function setupHeaderAnimation() {
-  window.addEventListener("scroll", () => {
-    const scrollTop = window.scrollY;
-    const header = document.querySelector("header h1");
-    const navLogo = document.querySelector(".nav-logo");
-    const subtitle = document.querySelector("header p");
+// Header-Animation beim Scrollen
+function initHeaderAnimation() {
+  const header = document.querySelector('header');
+  const navLogo = document.querySelector('.nav-logo');
+  const scrollThreshold = 100;
 
-    const maxScroll = 100;
-    const scrollFactor = Math.min(scrollTop / maxScroll, 1);
-
-    header.style.transform = `translate(${-300 * scrollFactor}px, ${-20 * scrollFactor}px) scale(${1 - 0.5 * scrollFactor})`;
-    header.style.opacity = 1 - scrollFactor;
-
-    subtitle.classList.toggle("scrolling-subtitle", scrollFactor > 0.25);
-    navLogo.style.opacity = scrollFactor === 1 ? 1 : 0;
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > scrollThreshold) {
+      document.body.classList.add('scrolled');
+      if (navLogo) navLogo.classList.add('visible');
+    } else {
+      document.body.classList.remove('scrolled');
+      if (navLogo) navLogo.classList.remove('visible');
+    }
   });
 }
 
@@ -150,6 +168,7 @@ function setupThemeToggle() {
     localStorage.setItem("theme", currentTheme);
   });
 }
+
 // Animation für die Offer-Items beim Scrollen
 const observeOffers = () => {
   const offerItems = document.querySelectorAll('.offer-item');
@@ -163,12 +182,6 @@ const observeOffers = () => {
   
   offerItems.forEach(item => observer.observe(item));
 };
-
-// Füge diese Funktion zu deinem DOMContentLoaded-Event hinzu
-document.addEventListener('DOMContentLoaded', function() {
-  // ... dein bestehender Code
-  observeOffers();
-});
 
 // Swap SVG icons on hover
 function setupHoverIcons() {
@@ -186,21 +199,14 @@ function setupHoverIcons() {
   });
 }
 
-// Initialization on DOM load
-document.addEventListener("DOMContentLoaded", () => {
-  lucide.createIcons();
-  initializeThemePreference();
-  enableSmoothScrolling();
-  setupProjectFilters();
-  setupSectionFadeIn(); // ← WICHTIG: wurde wieder aktiviert!
-  setupScrollSpy();
-  setupScrollToTop();
-  setupHeaderAnimation();
-  setupThemeToggle();
-  setupSkillsTabs();
-  setupToolItemObserver();
-  setupHoverIcons();
-});
+// Ensure floating elements are visible
+function setupFloatingElements() {
+  const floatingElements = document.querySelectorAll('.floating-element');
+  floatingElements.forEach(element => {
+    element.style.opacity = 1;
+  });
+}
+
 
 // Reset scroll on page reload
 window.addEventListener("beforeunload", () => {
