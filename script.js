@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeaderAnimation();;
   setupThemeToggle();
   setupHoverIcons();
+  setupTouchTooltips()
   observeProjects();
   observeOffers();
   setupFloatingElements();
@@ -199,6 +200,21 @@ function setupHoverIcons() {
   });
 }
 
+function setupTouchTooltips() {
+  const capsules = document.querySelectorAll('.tool-capsule');
+
+  capsules.forEach((capsule) => {
+    capsule.addEventListener('touchstart', () => {
+      capsule.classList.add('tooltip-visible');
+
+      // Nach 1 Sekunde Tooltip wieder ausblenden
+      setTimeout(() => {
+        capsule.classList.remove('tooltip-visible');
+      }, 1000);
+    }, { passive: true }); // verhindert Scroll-Blockierung
+  });
+}
+
 // Ensure floating elements are visible
 function setupFloatingElements() {
   const floatingElements = document.querySelectorAll('.floating-element');
@@ -219,3 +235,10 @@ if (window.location.hash === "#main") {
 }
 
 
+// Burger Toggle
+const burger = document.getElementById('burger');
+const navLinks = document.getElementById('navLinks');
+
+burger.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});

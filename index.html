@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" href="/images/favicon.png" type="image/png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>andrecreate – UX/UI Designer & Frontend Developer</title>
+    <title>andrecreate – UX/UI Design</title>
 
     <!-- Favicon -->
     <link rel="icon" href="/images/favicon.png" type="image/png" />
@@ -35,7 +35,7 @@
       <h1>
         <span class="brand-name">andre</span><span class="brand-highlight">create</span>
       </h1>
-      <p>UX/UI Designer & Frontend Developer</p>
+      <p>UX/UI Design</p>
       <div class="floating-elements">
         <div class="floating-element"></div>
         <div class="floating-element"></div>
@@ -45,26 +45,32 @@
       <div class="scroll-indicator"></div>
     </header>
 
-    <!-- Navigation -->
-    <nav>
+    <nav class="nav-container">
       <div class="nav-logo">
         <span class="brand-name">a</span><span class="brand-highlight">c</span>
       </div>
-
-      <div class="theme-toggle" title="Toggle dark mode">
-        <i data-lucide="sun" class="icon sun"></i>
-        <i data-lucide="moon" class="icon moon"></i>
+    
+      <div class="burger" id="burger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
       </div>
-
-      <ul>
+    
+      <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
         <li><a href="#toolbox">My Toolbox</a></li>
         <li><a href="#offer">What I Offer</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+    
+      <div class="theme-toggle">
+        <i data-lucide="sun" class="icon sun"></i>
+        <i data-lucide="moon" class="icon moon"></i>
+      </div>
     </nav>
-
+    
+ 
     <!-- Main Content -->
     <main id="main" class="page-content">
 
@@ -81,6 +87,7 @@
           <div class="skills-tags">
             <span class="skill-tag identity">Visual Design</span>
             <span class="skill-tag ux">UI/UX Design</span>
+
             <span class="skill-tag identity">Branding</span>
             <span class="skill-tag development">JavaScript</span>
             <span class="skill-tag ux">Wireframing</span>
@@ -119,12 +126,12 @@
             <span>CSS</span>
           </div>
           
-          <div class="tool-capsule featured" data-category="development" data-details="My primary programming language for adding interactivity and dynamic behavior to websites.">
+          <div class="tool-capsule" data-category="development" data-details="My primary programming language for adding interactivity and dynamic behavior to websites.">
             <i data-lucide="code-2"></i>
             <span>JavaScript</span>
           </div>
           
-          <div class="tool-capsule" data-category="development" data-details="My daily coding environment with powerful extensions and customizations for efficient development.">
+          <div class="tool-capsule featured" data-category="development" data-details="My coding environment with powerful extensions and customizations for efficient development.">
             <img src="icons/vscode.svg" alt="VS Code logo" />
             <span>VS Code</span>
           </div>
@@ -140,12 +147,12 @@
             <span>Figma</span>
           </div>
           
-          <div class="tool-capsule" data-category="design" data-details="Vector graphics editor for creating logos, illustrations, and other visual elements.">
+          <div class="tool-capsule featured" data-category="design" data-details="Vector graphics editor for creating logos, illustrations, and other visual elements.">
             <img src="icons/affinity-designer.svg" alt="Affinity Designer logo" />
             <span>Affinity Designer</span>
           </div>
           
-          <div class="tool-capsule" data-category="design" data-details="Photo editing software for retouching, compositing, and image manipulation.">
+          <div class="tool-capsule featured" data-category="design" data-details="Photo editing software for retouching, compositing, and image manipulation.">
             <img src="icons/affinity-photo.svg" alt="Affinity Photo logo" />
             <span>Affinity Photo</span>
           </div>
@@ -156,7 +163,7 @@
           </div>
           
           <!-- Utility Tools -->
-          <div class="tool-capsule" data-category="utilities" data-details="3D modeling and animation software for creating 3D assets and environments.">
+          <div class="tool-capsule featured" data-category="utilities" data-details="3D modeling and animation software for creating 3D assets and environments.">
             <img src="icons/blender.svg" alt="Blender logo" />
             <span>Blender</span>
           </div>
@@ -166,7 +173,7 @@
             <span>After Effects</span>
           </div>
           
-          <div class="tool-capsule" data-category="utilities" data-details="Video editing software for creating and editing videos for personal and professional projects.">
+          <div class="tool-capsule featured" data-category="utilities" data-details="Video editing software for creating and editing videos for personal and professional projects.">
             <img src="icons/imovie.svg" alt="iMovie logo" />
             <span>iMovie</span>
           </div>
@@ -176,7 +183,7 @@
             <span>Unity</span>
           </div>
           
-          <div class="tool-capsule featured" data-category="utilities" data-details="Programming environment for creating generative art, visualizations, and interactive experiences.">
+          <div class="tool-capsule" data-category="utilities" data-details="Programming environment for creating generative art, visualizations, and interactive experiences.">
             <img src="icons/processing.png" alt="Processing logo" />
             <span>Processing</span>
           </div>
@@ -213,7 +220,7 @@
             </div>
             <div class="offer-content">
               <h3>Creative Development</h3>
-              <p>Coding modern, responsive websites with HTML, CSS, and JavaScript – by hand.</p>
+              <p>Coding modern, responsive websites with HTML, CSS, and JavaScript.</p>
             </div>
           </div>
       
@@ -238,6 +245,27 @@
   <div class="projects-grid">
 
     <!-- Project Cards -->
+
+    <div class="project-card visual">
+      <img src="projects/pfotenglueck-redesign.jpg" alt="Website redesign for an animal shelter" />
+      
+      <div class="project-info">
+        <h3>Website Redesign – Animal Shelter</h3>
+        <p>This project involved redesigning the website of a local animal welfare organization. The goal was to create an emotionally engaging, desktop-first experience that encourages adoptions, donations, and volunteer participation.</p>
+        
+        <div class="project-tags">
+          <span class="tag ux">UX Research</span>
+          <span class="tag ux">UI Design</span>
+          <span class="tag ux">Wireframing</span>
+          <span class="tag identity">Visual Design</span>
+        </div>
+        
+        <p class="project-tools"><strong>Tools:</strong> Figma, FigJam</p>
+        
+        <a href="pfotenglueck-redesign.html">View Project</a>
+      </div>
+    </div>
+
     <div class="project-card code">
       <img src="projects/processing-art.jpg" alt="Interactive generative artwork made in Processing" />
       <div class="project-info">
@@ -391,15 +419,6 @@
         <div class="social-links">
           <a href="mailto:info@andrecreate.com" aria-label="Email" title="Email">
             <img src="icons/email.svg" alt="Email icon" />
-          </a>
-          <a href="https://github.com/yourusername" aria-label="GitHub" title="GitHub" target="_blank">
-            <img src="icons/github.svg" alt="GitHub icon" />
-          </a>
-          <a href="https://linkedin.com/in/yourprofile" aria-label="LinkedIn" title="LinkedIn" target="_blank">
-            <img src="icons/linkedin.svg" alt="LinkedIn icon" />
-          </a>
-          <a href="https://instagram.com/yourusername" aria-label="Instagram" title="Instagram" target="_blank">
-            <img src="icons/instagram.svg" alt="Instagram icon" />
           </a>
         </div>
       </section>
