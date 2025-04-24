@@ -1935,7 +1935,7 @@ body.dark-mode .project-media video {
   cursor: pointer;
   position: absolute;
   left: 20px;
-  top: 50%;
+  top: 22px;
   transform: translateY(-50%); /* Vertikal zentrieren */
   z-index: 1000;
 }
@@ -2002,7 +2002,7 @@ body.dark-mode .project-media video {
   /* Ursprüngliche Logo-Position beibehalten */
   .nav-logo {
     left: 20px; /* Links positionieren wie vorher */
-    top: 50%;
+    top: 17%;
     transform: translateY(-50%); /* Vertikal zentrieren */
     opacity: 0; /* Standardmäßig ausgeblendet */
   }
