@@ -551,65 +551,6 @@ footer p:first-of-type {
   margin-top: var(--spacing-md);
 }
   
- /* ---------------------------------- */
-/* RESPONSIVE DESIGN                 */
-/* ---------------------------------- */
-
-/* Tablet und kleinere Geräte */
-@media (max-width: 768px) {
-  section {
-    margin: var(--spacing-md) var(--spacing-sm); /* Variablen statt 20px 10px */
-    padding: var(--spacing-md); /* Variable statt 15px */
-  }
-  
-  /* Verbesserte Navigation für Tablets */
-  nav ul li {
-    margin: 0 var(--spacing-sm); /* Engere Abstände zwischen Menüpunkten */
-  }
-  
-  /* Verbesserte Darstellung des Headers */
-  header {
-    padding: 100px var(--spacing-md) 40px; /* Etwas weniger Padding auf Tablets */
-  }
-}
-
-/* Mobilgeräte */
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 2.5rem; /* rem statt em für bessere Konsistenz */
-  }
-
-  header p {
-    font-size: 1.2rem; /* rem statt em */
-  }
-  
-  /* Verbesserte mobile Navigation */
-  nav ul li {
-    margin: 0 var(--spacing-xs); /* Noch engere Abstände */
-  }
-  
-  /* Anpassungen für Abschnitte auf Mobilgeräten */
-  section h2 {
-    font-size: 1.6rem; /* Etwas kleinere Überschriften */
-  }
-  
-  section p {
-    font-size: 1rem; /* Standardgröße für bessere Lesbarkeit */
-    line-height: 1.5; /* Etwas engere Zeilen */
-  }
-}
-
-/* Sehr kleine Geräte */
-@media (max-width: 320px) {
-  header h1 {
-    font-size: 2rem; /* Noch kleiner für sehr kleine Bildschirme */
-  }
-  
-  nav ul li a {
-    font-size: 0.9rem; /* Kleinere Navigationstexte */
-  }
-}
-
 
 /* ---------------------------------- */
 /* ABOUT SECTION ENHANCED            */
@@ -907,29 +848,7 @@ footer p:first-of-type {
   background-color: var(--tertiary-accent);
 }
 
-/* Medienabfragen für Responsivität */
-@media (max-width: 768px) {
-  .tool-capsule::after {
-    max-width: 160px;
-  }
-}
 
-@media (max-width: 480px) {
-  .tool-legend {
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-  }
-  
-  .tool-capsule {
-    padding: 6px 12px 6px 10px;
-  }
-  
-  .tool-capsule::after {
-    max-width: 140px;
-    font-size: 0.75rem;
-  }
-}
 /* ---------------------------------- */
 /* OFFER CARDS & ICONS               */
 /* ---------------------------------- */
@@ -1087,34 +1006,7 @@ footer p:first-of-type {
   transition-delay: 0.5s;
 }
 
-/* Responsive Layout verbessert */
-@media (max-width: 992px) {
-  .offer-timeline {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  }
-  
-  /* Gleiche Höhe auf mittleren Bildschirmen erzwingen */
-  .offer-item {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .offer-content {
-    flex: 1;
-  }
-}
 
-@media (max-width: 768px) {
-  .offer-timeline {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  
-  .offer-item {
-    padding: 25px 20px 20px;
-  }
-}
   
 
 /* ----------------------- */
@@ -1605,34 +1497,7 @@ body.dark-mode .project-media img {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsive Anpassungen */
-@media (max-width: 768px) {
-  .project-detail {
-    margin-top: 80px;
-  }
-  
-  .project-detail h2 {
-    font-size: 2rem;
-  }
-  
-  .project-description {
-    font-size: 1rem;
-  }
-  
-  .project-media {
-    margin: 40px 0;
-  }
-}
 
-@media (max-width: 480px) {
-  .project-detail h2 {
-    font-size: 1.75rem;
-  }
-  
-  .placeholder-block {
-    padding: 30px 15px;
-  }
-}
 
 /* Mini-Header für Detailseiten */
 .detail-header {
@@ -1804,26 +1669,7 @@ body.dark-mode .social-links a[aria-label="GitHub"] {
   background-color: #555;
 }
 
-/* Responsive Anpassungen */
-@media (max-width: 480px) {
-  .social-links {
-    gap: 16px;
-  }
-  
-  .social-links a {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .social-links a img {
-    width: 24px;
-    height: 24px;
-  }
-  
-  #contact p {
-    font-size: 1.1em;
-  }
-}
+
   
   /* ---------------------------------- */
   /* SCROLL TO TOP BUTTON              */
@@ -2079,14 +1925,111 @@ body.dark-mode .project-media video {
   box-shadow: 0 4px 14px rgba(255, 255, 255, 0.1);
 }
 
-/* ---------------------------------- */
-/* MOBILE FIXES                      */
+ /* ---------------------------------- */
+/* RESPONSIVE DESIGN                 */
 /* ---------------------------------- */
 
+/* Mobile Navigation (Burger-Menü) */
+.burger-menu {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%); /* Vertikal zentrieren */
+  z-index: 1000;
+}
+
+.burger-menu .bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--white);
+  margin: 5px 0;
+  transition: var(--transition-normal);
+}
+
+/* Tablet und kleinere Geräte (768px und kleiner) */
 @media (max-width: 768px) {
-  /* Header mobile */
+  /* Allgemeine Layout-Anpassungen */
+  section {
+    margin: var(--spacing-md) var(--spacing-sm);
+    padding: var(--spacing-md);
+  }
+  
+  /* Navigation */
+  nav {
+    padding: 0; /* Padding entfernen */
+    height: 44px; /* Standard-Höhe für mobile Navigation (iOS-freundlich) */
+    position: fixed; /* Fixierte Position */
+    top: 0;
+    z-index: 1001; /* Höherer z-index als andere Elemente */
+  }
+  
+  .burger-menu {
+    display: block;
+  }
+  
+  nav ul {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    flex-direction: column;
+    background-color: var(--primary);
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    transition: var(--transition-normal);
+    padding-top: 60px;
+    z-index: 999;
+  }
+  
+  nav ul.active {
+    left: 0;
+  }
+  
+  nav ul li {
+    margin: 20px 0;
+    display: block;
+  }
+  
+  /* Logo und Theme-Toggle */
+  .theme-toggle {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%); /* Vertikal zentrieren */
+  }
+  
+  /* Ursprüngliche Logo-Position beibehalten */
+  .nav-logo {
+    left: 20px; /* Links positionieren wie vorher */
+    top: 50%;
+    transform: translateY(-50%); /* Vertikal zentrieren */
+    opacity: 0; /* Standardmäßig ausgeblendet */
+  }
+  
+  .nav-logo.visible {
+    opacity: 1;
+  }
+  
+  /* Animation für Burger zu X */
+  .burger-menu.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  
+  .burger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .burger-menu.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+  
+  /* Header */
   header {
-    padding: 100px 20px 40px;
+    padding-top: 70px; /* Mehr Platz für die fixierte Navbar */
+    padding-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
     min-height: 60vh;
   }
   
@@ -2099,10 +2042,10 @@ body.dark-mode .project-media video {
   }
   
   .floating-element {
-    display: none; /* Optional: Deaktiviere einige Animations-Elemente auf kleinen Bildschirmen */
+    display: none; /* Entferne komplexe Animationen auf Mobile */
   }
   
-  /* About section mobile */
+  /* About-Sektion */
   .about-content {
     flex-direction: column;
     text-align: center;
@@ -2112,11 +2055,50 @@ body.dark-mode .project-media video {
     margin: 0 auto 30px;
   }
   
-  .skills-tags {
-    justify-content: center;
+  /* Toolbox */
+  .tool-capsule::after {
+    display: none; /* Tooltips auf mobil deaktivieren */
   }
   
-  /* Projects mobile */
+  .tool-capsule {
+    padding: 6px 12px 6px 10px;
+  }
+  
+  .tool-capsule.tapped::after {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-100%) scale(1);
+    position: fixed; /* Besser für mobile Ansicht */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 300px;
+    z-index: 1000;
+    padding: 15px;
+    background: var(--primary);
+    border-radius: 8px;
+    font-size: 0.95rem;
+  }
+  
+  /* Overlay für Tippen-Tooltip */
+  .tooltip-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+  }
+  
+  .tooltip-overlay.active {
+    display: block;
+  }
+  
+  /* Projekte */
   .filter-buttons {
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -2130,22 +2112,35 @@ body.dark-mode .project-media video {
     white-space: nowrap;
   }
   
-  /* Toolbox mobile */
-  .tool-capsule::after {
-    display: none; /* Tooltips auf mobil deaktivieren */
+  /* Offer-Sektion */
+  .offer-timeline {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .offer-item {
+    height: auto;
+    padding: 25px 20px 20px;
+    margin-bottom: 20px;
+  }
+  
+  #offer {
+    padding-bottom: 60px;
   }
 }
 
+/* Mobilgeräte - noch kleiner (480px und kleiner) */
 @media (max-width: 480px) {
+  /* Header */
   header h1 {
     font-size: 2.5rem;
   }
   
   header p {
-    font-size: 1.2em;
+    font-size: 1.2rem;
   }
   
-  /* Nav simplification for very small screens */
+  /* Navigation für sehr kleine Screens */
   nav ul li {
     margin: 0 8px;
   }
@@ -2155,7 +2150,7 @@ body.dark-mode .project-media video {
     padding: 4px 0;
   }
   
-  /* About section tiny screens */
+  /* About-Bilder */
   .photo-container, .about-photo {
     width: 150px;
     height: 150px;
@@ -2167,5 +2162,56 @@ body.dark-mode .project-media video {
   
   .about-text p:first-child {
     font-size: 1.1rem;
+  }
+  
+  /* Tool-Container */
+  .tool-legend {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .tool-capsule::after {
+    max-width: 140px;
+    font-size: 0.75rem;
+  }
+  
+  /* Social Links */
+  .social-links {
+    gap: 16px;
+  }
+  
+  .social-links a {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .social-links a img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  #contact p {
+    font-size: 1.1em;
+  }
+  
+  /* Projekt-Details */
+  .project-detail h2 {
+    font-size: 1.75rem;
+  }
+  
+  .placeholder-block {
+    padding: 30px 15px;
+  }
+}
+
+/* Sehr kleine Geräte (320px und kleiner) */
+@media (max-width: 320px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  nav ul li a {
+    font-size: 0.85rem;
   }
 }
